@@ -58,7 +58,7 @@ var (
 	})
 	communicationSyncServiceWatchEventsSpec = sync.OnceValue(func() connect.Spec {
 		return connect.Spec{
-			StreamType: connect.StreamTypeServer,
+			StreamType: connect.StreamTypeBidi,
 			Schema:     v1.File_relay_communication_v1_sync_proto.Services().ByName("CommunicationSyncService").Methods().ByName("WatchEvents"),
 			Procedure:  CommunicationSyncServiceWatchEventsProcedure,
 		}
@@ -86,8 +86,8 @@ type CommunicationSyncServiceClient interface {
 	PublishEvent(context.Context, *v1.PublishEventRequest) (*v1.PublishEventResponse, error)
 	// PullEvents returns one ordered page after the caller's durable cursor.
 	PullEvents(context.Context, *v1.PullEventsRequest) (*v1.PullEventsResponse, error)
-	// WatchEvents streams ordered pages after the caller's durable cursor.
-	WatchEvents(context.Context, *v1.WatchEventsRequest) (CommunicationSyncServiceWatchEventsClientStream, error)
+	// WatchEvents exchanges ordered pages and durable cursor acknowledgements.
+	WatchEvents(context.Context) (CommunicationSyncServiceWatchEventsClientStream, error)
 	// GetHistorySnapshot returns the latest owner-scoped encrypted archive.
 	GetHistorySnapshot(context.Context, *v1.GetHistorySnapshotRequest) (*v1.GetHistorySnapshotResponse, error)
 	// PutHistorySnapshot atomically replaces an archive at an expected revision.
@@ -105,6 +105,22 @@ func NewCommunicationSyncServiceClient(client *connect.Client) CommunicationSync
 // CommunicationSyncService's WatchEvents RPC.
 type CommunicationSyncServiceWatchEventsClientStream struct {
 	stream connect.ClientStream
+}
+
+// SendHeaders opens the stream and flushes the request headers without a message. The first Send or
+// Receive does this implicitly.
+func (s CommunicationSyncServiceWatchEventsClientStream) SendHeaders() error {
+	return s.stream.SendHeaders()
+}
+
+// Send sends a request message to the server.
+func (s CommunicationSyncServiceWatchEventsClientStream) Send(req *v1.WatchEventsRequest) error {
+	return s.stream.Send(req)
+}
+
+// CloseSend closes the request side of the stream.
+func (s CommunicationSyncServiceWatchEventsClientStream) CloseSend() error {
+	return s.stream.CloseSend()
 }
 
 // Receive returns the next response message from the server.
@@ -129,8 +145,8 @@ type CommunicationSyncServiceHandler interface {
 	PublishEvent(context.Context, *v1.PublishEventRequest) (*v1.PublishEventResponse, error)
 	// PullEvents returns one ordered page after the caller's durable cursor.
 	PullEvents(context.Context, *v1.PullEventsRequest) (*v1.PullEventsResponse, error)
-	// WatchEvents streams ordered pages after the caller's durable cursor.
-	WatchEvents(context.Context, *v1.WatchEventsRequest, CommunicationSyncServiceWatchEventsServerStream) error
+	// WatchEvents exchanges ordered pages and durable cursor acknowledgements.
+	WatchEvents(context.Context, CommunicationSyncServiceWatchEventsServerStream) error
 	// GetHistorySnapshot returns the latest owner-scoped encrypted archive.
 	GetHistorySnapshot(context.Context, *v1.GetHistorySnapshotRequest) (*v1.GetHistorySnapshotResponse, error)
 	// PutHistorySnapshot atomically replaces an archive at an expected revision.
@@ -156,6 +172,15 @@ type CommunicationSyncServiceWatchEventsServerStream struct {
 	stream connect.ServerStream
 }
 
+// Receive returns the next request message from the client.
+func (s CommunicationSyncServiceWatchEventsServerStream) Receive() (*v1.WatchEventsRequest, error) {
+	var req v1.WatchEventsRequest
+	if err := s.stream.Receive(&req); err != nil {
+		return nil, err
+	}
+	return &req, nil
+}
+
 // SendHeaders flushes the response headers without a message. The first Send does this implicitly.
 func (s CommunicationSyncServiceWatchEventsServerStream) SendHeaders() error {
 	return s.stream.SendHeaders()
@@ -177,7 +202,7 @@ func (UnimplementedCommunicationSyncServiceHandler) PullEvents(context.Context, 
 	return nil, connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.CommunicationSyncService.PullEvents is not implemented")
 }
 
-func (UnimplementedCommunicationSyncServiceHandler) WatchEvents(context.Context, *v1.WatchEventsRequest, CommunicationSyncServiceWatchEventsServerStream) error {
+func (UnimplementedCommunicationSyncServiceHandler) WatchEvents(context.Context, CommunicationSyncServiceWatchEventsServerStream) error {
 	return connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.CommunicationSyncService.WatchEvents is not implemented")
 }
 
@@ -209,8 +234,8 @@ func (c *communicationSyncServiceClient) PullEvents(ctx context.Context, req *v1
 	return &res, nil
 }
 
-func (c *communicationSyncServiceClient) WatchEvents(ctx context.Context, req *v1.WatchEventsRequest) (CommunicationSyncServiceWatchEventsClientStream, error) {
-	stream, err := c.client.CallServerStream(ctx, communicationSyncServiceWatchEventsSpec(), req)
+func (c *communicationSyncServiceClient) WatchEvents(ctx context.Context) (CommunicationSyncServiceWatchEventsClientStream, error) {
+	stream, err := c.client.CallClientStream(ctx, communicationSyncServiceWatchEventsSpec())
 	if err != nil {
 		return CommunicationSyncServiceWatchEventsClientStream{}, err
 	}
@@ -262,11 +287,7 @@ func (h communicationSyncServiceHandler) pullEvents(ctx context.Context, _ conne
 }
 
 func (h communicationSyncServiceHandler) watchEvents(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {
-	var req v1.WatchEventsRequest
-	if err := stream.Receive(&req); err != nil {
-		return err
-	}
-	return h.svc.WatchEvents(ctx, &req, CommunicationSyncServiceWatchEventsServerStream{stream: stream})
+	return h.svc.WatchEvents(ctx, CommunicationSyncServiceWatchEventsServerStream{stream: stream})
 }
 
 func (h communicationSyncServiceHandler) getHistorySnapshot(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {

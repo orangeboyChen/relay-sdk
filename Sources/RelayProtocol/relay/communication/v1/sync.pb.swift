@@ -180,6 +180,8 @@ public nonisolated struct Relay_Communication_V1_WatchEventsRequest: Sendable {
 
   public var afterSequence: Int64 = 0
 
+  public var acknowledgedSequence: Int64 = 0
+
   public var unknownFields = SwiftProtobuf.UnknownStorage()
 
   public init() {}
@@ -524,7 +526,7 @@ nonisolated extension Relay_Communication_V1_PullEventsResponse: SwiftProtobuf.M
 
 nonisolated extension Relay_Communication_V1_WatchEventsRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
   public static let protoMessageName: String = _protobuf_package + ".WatchEventsRequest"
-  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}after_sequence\0")
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}after_sequence\0\u{3}acknowledged_sequence\0")
 
   public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
     while let fieldNumber = try decoder.nextFieldNumber() {
@@ -533,6 +535,7 @@ nonisolated extension Relay_Communication_V1_WatchEventsRequest: SwiftProtobuf.M
       // enabled. https://github.com/apple/swift-protobuf/issues/1034
       switch fieldNumber {
       case 1: try { try decoder.decodeSingularInt64Field(value: &self.afterSequence) }()
+      case 2: try { try decoder.decodeSingularInt64Field(value: &self.acknowledgedSequence) }()
       default: break
       }
     }
@@ -542,11 +545,15 @@ nonisolated extension Relay_Communication_V1_WatchEventsRequest: SwiftProtobuf.M
     if self.afterSequence != 0 {
       try visitor.visitSingularInt64Field(value: self.afterSequence, fieldNumber: 1)
     }
+    if self.acknowledgedSequence != 0 {
+      try visitor.visitSingularInt64Field(value: self.acknowledgedSequence, fieldNumber: 2)
+    }
     try unknownFields.traverse(visitor: &visitor)
   }
 
   public static func ==(lhs: Relay_Communication_V1_WatchEventsRequest, rhs: Relay_Communication_V1_WatchEventsRequest) -> Bool {
     if lhs.afterSequence != rhs.afterSequence {return false}
+    if lhs.acknowledgedSequence != rhs.acknowledgedSequence {return false}
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

@@ -20,9 +20,9 @@ public protocol Relay_Communication_V1_CommunicationSyncServiceClientInterface: 
     @available(iOS 13, *)
     func `pullEvents`(request: Relay_Communication_V1_PullEventsRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_PullEventsResponse>
 
-    /// WatchEvents streams ordered pages after the caller's durable cursor.
+    /// WatchEvents exchanges ordered pages and durable cursor acknowledgements.
     @available(iOS 13, *)
-    func `watchEvents`(headers: Connect.Headers) -> any Connect.ServerOnlyAsyncStreamInterface<Relay_Communication_V1_WatchEventsRequest, Relay_Communication_V1_WatchEventsResponse>
+    func `watchEvents`(headers: Connect.Headers) -> any Connect.BidirectionalAsyncStreamInterface<Relay_Communication_V1_WatchEventsRequest, Relay_Communication_V1_WatchEventsResponse>
 
     /// GetHistorySnapshot returns the latest owner-scoped encrypted archive.
     @available(iOS 13, *)
@@ -52,8 +52,8 @@ public final class Relay_Communication_V1_CommunicationSyncServiceClient: Relay_
     }
 
     @available(iOS 13, *)
-    public func `watchEvents`(headers: Connect.Headers = [:]) -> any Connect.ServerOnlyAsyncStreamInterface<Relay_Communication_V1_WatchEventsRequest, Relay_Communication_V1_WatchEventsResponse> {
-        return self.client.serverOnlyStream(path: "/relay.communication.v1.CommunicationSyncService/WatchEvents", headers: headers)
+    public func `watchEvents`(headers: Connect.Headers = [:]) -> any Connect.BidirectionalAsyncStreamInterface<Relay_Communication_V1_WatchEventsRequest, Relay_Communication_V1_WatchEventsResponse> {
+        return self.client.bidirectionalStream(path: "/relay.communication.v1.CommunicationSyncService/WatchEvents", headers: headers)
     }
 
     @available(iOS 13, *)
@@ -70,7 +70,7 @@ public final class Relay_Communication_V1_CommunicationSyncServiceClient: Relay_
         public enum Methods {
             public static let publishEvent = Connect.MethodSpec(name: "PublishEvent", service: "relay.communication.v1.CommunicationSyncService", type: .unary)
             public static let pullEvents = Connect.MethodSpec(name: "PullEvents", service: "relay.communication.v1.CommunicationSyncService", type: .unary)
-            public static let watchEvents = Connect.MethodSpec(name: "WatchEvents", service: "relay.communication.v1.CommunicationSyncService", type: .serverStream)
+            public static let watchEvents = Connect.MethodSpec(name: "WatchEvents", service: "relay.communication.v1.CommunicationSyncService", type: .bidirectionalStream)
             public static let getHistorySnapshot = Connect.MethodSpec(name: "GetHistorySnapshot", service: "relay.communication.v1.CommunicationSyncService", type: .unary)
             public static let putHistorySnapshot = Connect.MethodSpec(name: "PutHistorySnapshot", service: "relay.communication.v1.CommunicationSyncService", type: .unary)
         }

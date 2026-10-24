@@ -388,10 +388,11 @@ func (x *PullEventsResponse) GetNextSequence() int64 {
 }
 
 type WatchEventsRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
-	AfterSequence int64                  `protobuf:"varint,1,opt,name=after_sequence,json=afterSequence,proto3" json:"after_sequence,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	state                protoimpl.MessageState `protogen:"open.v1"`
+	AfterSequence        int64                  `protobuf:"varint,1,opt,name=after_sequence,json=afterSequence,proto3" json:"after_sequence,omitempty"`
+	AcknowledgedSequence int64                  `protobuf:"varint,2,opt,name=acknowledged_sequence,json=acknowledgedSequence,proto3" json:"acknowledged_sequence,omitempty"`
+	unknownFields        protoimpl.UnknownFields
+	sizeCache            protoimpl.SizeCache
 }
 
 func (x *WatchEventsRequest) Reset() {
@@ -427,6 +428,13 @@ func (*WatchEventsRequest) Descriptor() ([]byte, []int) {
 func (x *WatchEventsRequest) GetAfterSequence() int64 {
 	if x != nil {
 		return x.AfterSequence
+	}
+	return 0
+}
+
+func (x *WatchEventsRequest) GetAcknowledgedSequence() int64 {
+	if x != nil {
+		return x.AcknowledgedSequence
 	}
 	return 0
 }
@@ -775,9 +783,10 @@ const file_relay_communication_v1_sync_proto_rawDesc = "" +
 	"\tpage_size\x18\x02 \x01(\x05R\bpageSize\"y\n" +
 	"\x12PullEventsResponse\x12>\n" +
 	"\x06events\x18\x01 \x03(\v2&.relay.communication.v1.EncryptedEventR\x06events\x12#\n" +
-	"\rnext_sequence\x18\x02 \x01(\x03R\fnextSequence\";\n" +
+	"\rnext_sequence\x18\x02 \x01(\x03R\fnextSequence\"p\n" +
 	"\x12WatchEventsRequest\x12%\n" +
-	"\x0eafter_sequence\x18\x01 \x01(\x03R\rafterSequence\"z\n" +
+	"\x0eafter_sequence\x18\x01 \x01(\x03R\rafterSequence\x123\n" +
+	"\x15acknowledged_sequence\x18\x02 \x01(\x03R\x14acknowledgedSequence\"z\n" +
 	"\x13WatchEventsResponse\x12>\n" +
 	"\x06events\x18\x01 \x03(\v2&.relay.communication.v1.EncryptedEventR\x06events\x12#\n" +
 	"\rnext_sequence\x18\x02 \x01(\x03R\fnextSequence\"T\n" +
@@ -804,12 +813,12 @@ const file_relay_communication_v1_sync_proto_rawDesc = "" +
 	"\vHistoryKind\x12\x1c\n" +
 	"\x18HISTORY_KIND_UNSPECIFIED\x10\x00\x12\x19\n" +
 	"\x15HISTORY_KIND_MESSAGES\x10\x01\x12\x16\n" +
-	"\x12HISTORY_KIND_CALLS\x10\x022\xce\x04\n" +
+	"\x12HISTORY_KIND_CALLS\x10\x022\xd0\x04\n" +
 	"\x18CommunicationSyncService\x12i\n" +
 	"\fPublishEvent\x12+.relay.communication.v1.PublishEventRequest\x1a,.relay.communication.v1.PublishEventResponse\x12c\n" +
 	"\n" +
-	"PullEvents\x12).relay.communication.v1.PullEventsRequest\x1a*.relay.communication.v1.PullEventsResponse\x12h\n" +
-	"\vWatchEvents\x12*.relay.communication.v1.WatchEventsRequest\x1a+.relay.communication.v1.WatchEventsResponse0\x01\x12{\n" +
+	"PullEvents\x12).relay.communication.v1.PullEventsRequest\x1a*.relay.communication.v1.PullEventsResponse\x12j\n" +
+	"\vWatchEvents\x12*.relay.communication.v1.WatchEventsRequest\x1a+.relay.communication.v1.WatchEventsResponse(\x010\x01\x12{\n" +
 	"\x12GetHistorySnapshot\x121.relay.communication.v1.GetHistorySnapshotRequest\x1a2.relay.communication.v1.GetHistorySnapshotResponse\x12{\n" +
 	"\x12PutHistorySnapshot\x121.relay.communication.v1.PutHistorySnapshotRequest\x1a2.relay.communication.v1.PutHistorySnapshotResponseBRZPgithub.com/orangeboyChen/relay-sdk/gen/go/relay/communication/v1;communicationv1b\x06proto3"
 
