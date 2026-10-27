@@ -19,6 +19,21 @@ public protocol Relay_Communication_V1_OwnerServiceClientInterface: Sendable {
     func `listSimCards`(request: Relay_Communication_V1_ListSimCardsRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_ListSimCardsResponse>
 
     @available(iOS 13, *)
+    func `listEsimProfiles`(request: Relay_Communication_V1_ListEsimProfilesRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_ListEsimProfilesResponse>
+
+    @available(iOS 13, *)
+    func `addEsimProfile`(request: Relay_Communication_V1_AddEsimProfileRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_AddEsimProfileResponse>
+
+    @available(iOS 13, *)
+    func `renameEsimProfile`(request: Relay_Communication_V1_RenameEsimProfileRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_RenameEsimProfileResponse>
+
+    @available(iOS 13, *)
+    func `setEsimProfileEnabled`(request: Relay_Communication_V1_SetEsimProfileEnabledRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_SetEsimProfileEnabledResponse>
+
+    @available(iOS 13, *)
+    func `deleteEsimProfile`(request: Relay_Communication_V1_DeleteEsimProfileRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_DeleteEsimProfileResponse>
+
+    @available(iOS 13, *)
     func `retireSimCard`(request: Relay_Communication_V1_RetireSimCardRequest, headers: Connect.Headers) async -> ResponseMessage<Relay_Communication_V1_RetireSimCardResponse>
 
     @available(iOS 13, *)
@@ -98,6 +113,31 @@ public final class Relay_Communication_V1_OwnerServiceClient: Relay_Communicatio
     @available(iOS 13, *)
     public func `listSimCards`(request: Relay_Communication_V1_ListSimCardsRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Relay_Communication_V1_ListSimCardsResponse> {
         return await self.client.unary(path: "/relay.communication.v1.OwnerService/ListSimCards", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `listEsimProfiles`(request: Relay_Communication_V1_ListEsimProfilesRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Relay_Communication_V1_ListEsimProfilesResponse> {
+        return await self.client.unary(path: "/relay.communication.v1.OwnerService/ListEsimProfiles", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `addEsimProfile`(request: Relay_Communication_V1_AddEsimProfileRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Relay_Communication_V1_AddEsimProfileResponse> {
+        return await self.client.unary(path: "/relay.communication.v1.OwnerService/AddEsimProfile", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `renameEsimProfile`(request: Relay_Communication_V1_RenameEsimProfileRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Relay_Communication_V1_RenameEsimProfileResponse> {
+        return await self.client.unary(path: "/relay.communication.v1.OwnerService/RenameEsimProfile", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `setEsimProfileEnabled`(request: Relay_Communication_V1_SetEsimProfileEnabledRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Relay_Communication_V1_SetEsimProfileEnabledResponse> {
+        return await self.client.unary(path: "/relay.communication.v1.OwnerService/SetEsimProfileEnabled", idempotencyLevel: .unknown, request: request, headers: headers)
+    }
+
+    @available(iOS 13, *)
+    public func `deleteEsimProfile`(request: Relay_Communication_V1_DeleteEsimProfileRequest, headers: Connect.Headers = [:]) async -> ResponseMessage<Relay_Communication_V1_DeleteEsimProfileResponse> {
+        return await self.client.unary(path: "/relay.communication.v1.OwnerService/DeleteEsimProfile", idempotencyLevel: .unknown, request: request, headers: headers)
     }
 
     @available(iOS 13, *)
@@ -209,6 +249,11 @@ public final class Relay_Communication_V1_OwnerServiceClient: Relay_Communicatio
         public enum Methods {
             public static let listDevices = Connect.MethodSpec(name: "ListDevices", service: "relay.communication.v1.OwnerService", type: .unary)
             public static let listSimCards = Connect.MethodSpec(name: "ListSimCards", service: "relay.communication.v1.OwnerService", type: .unary)
+            public static let listEsimProfiles = Connect.MethodSpec(name: "ListEsimProfiles", service: "relay.communication.v1.OwnerService", type: .unary)
+            public static let addEsimProfile = Connect.MethodSpec(name: "AddEsimProfile", service: "relay.communication.v1.OwnerService", type: .unary)
+            public static let renameEsimProfile = Connect.MethodSpec(name: "RenameEsimProfile", service: "relay.communication.v1.OwnerService", type: .unary)
+            public static let setEsimProfileEnabled = Connect.MethodSpec(name: "SetEsimProfileEnabled", service: "relay.communication.v1.OwnerService", type: .unary)
+            public static let deleteEsimProfile = Connect.MethodSpec(name: "DeleteEsimProfile", service: "relay.communication.v1.OwnerService", type: .unary)
             public static let retireSimCard = Connect.MethodSpec(name: "RetireSimCard", service: "relay.communication.v1.OwnerService", type: .unary)
             public static let updateDeviceNumericID = Connect.MethodSpec(name: "UpdateDeviceNumericId", service: "relay.communication.v1.OwnerService", type: .unary)
             public static let updateDeviceProfile = Connect.MethodSpec(name: "UpdateDeviceProfile", service: "relay.communication.v1.OwnerService", type: .unary)

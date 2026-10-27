@@ -45,6 +45,189 @@ public nonisolated struct Relay_Communication_V1_ListSimCardsRequest: Sendable {
   public init() {}
 }
 
+public nonisolated struct Relay_Communication_V1_ListEsimProfilesRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var simID: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public nonisolated struct Relay_Communication_V1_AddEsimProfileRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var simID: String = String()
+
+  public var profileID: String = String()
+
+  public var name: String = String()
+
+  public var iccid: String = String()
+
+  public var operatorName: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public nonisolated struct Relay_Communication_V1_RenameEsimProfileRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var simID: String = String()
+
+  public var profileID: String = String()
+
+  public var name: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public nonisolated struct Relay_Communication_V1_SetEsimProfileEnabledRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var simID: String = String()
+
+  public var profileID: String = String()
+
+  public var enabled: Bool = false
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public nonisolated struct Relay_Communication_V1_DeleteEsimProfileRequest: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var simID: String = String()
+
+  public var profileID: String = String()
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public nonisolated struct Relay_Communication_V1_EsimProfile: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var profileID: String = String()
+
+  public var name: String = String()
+
+  public var iccid: String = String()
+
+  public var operatorName: String = String()
+
+  public var isEnabled: Bool = false
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public nonisolated struct Relay_Communication_V1_ListEsimProfilesResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var profiles: [Relay_Communication_V1_EsimProfile] = []
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
+public nonisolated struct Relay_Communication_V1_AddEsimProfileResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var profile: Relay_Communication_V1_EsimProfile {
+    get {_profile ?? Relay_Communication_V1_EsimProfile()}
+    set {_profile = newValue}
+  }
+  /// Returns true if `profile` has been explicitly set.
+  public var hasProfile: Bool {self._profile != nil}
+  /// Clears the value of `profile`. Subsequent reads from it will return its default value.
+  public mutating func clearProfile() {self._profile = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _profile: Relay_Communication_V1_EsimProfile? = nil
+}
+
+public nonisolated struct Relay_Communication_V1_RenameEsimProfileResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var profile: Relay_Communication_V1_EsimProfile {
+    get {_profile ?? Relay_Communication_V1_EsimProfile()}
+    set {_profile = newValue}
+  }
+  /// Returns true if `profile` has been explicitly set.
+  public var hasProfile: Bool {self._profile != nil}
+  /// Clears the value of `profile`. Subsequent reads from it will return its default value.
+  public mutating func clearProfile() {self._profile = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _profile: Relay_Communication_V1_EsimProfile? = nil
+}
+
+public nonisolated struct Relay_Communication_V1_SetEsimProfileEnabledResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var profile: Relay_Communication_V1_EsimProfile {
+    get {_profile ?? Relay_Communication_V1_EsimProfile()}
+    set {_profile = newValue}
+  }
+  /// Returns true if `profile` has been explicitly set.
+  public var hasProfile: Bool {self._profile != nil}
+  /// Clears the value of `profile`. Subsequent reads from it will return its default value.
+  public mutating func clearProfile() {self._profile = nil}
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+
+  fileprivate var _profile: Relay_Communication_V1_EsimProfile? = nil
+}
+
+public nonisolated struct Relay_Communication_V1_DeleteEsimProfileResponse: Sendable {
+  // SwiftProtobuf.Message conformance is added in an extension below. See the
+  // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
+  // methods supported on all messages.
+
+  public var unknownFields = SwiftProtobuf.UnknownStorage()
+
+  public init() {}
+}
+
 public nonisolated struct Relay_Communication_V1_RetireSimCardRequest: Sendable {
   // SwiftProtobuf.Message conformance is added in an extension below. See the
   // `Message` and `Message+*Additions` files in the SwiftProtobuf library for
@@ -1095,6 +1278,402 @@ nonisolated extension Relay_Communication_V1_ListSimCardsRequest: SwiftProtobuf.
   }
 
   public static func ==(lhs: Relay_Communication_V1_ListSimCardsRequest, rhs: Relay_Communication_V1_ListSimCardsRequest) -> Bool {
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_ListEsimProfilesRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ListEsimProfilesRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}sim_id\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.simID) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.simID.isEmpty {
+      try visitor.visitSingularStringField(value: self.simID, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_ListEsimProfilesRequest, rhs: Relay_Communication_V1_ListEsimProfilesRequest) -> Bool {
+    if lhs.simID != rhs.simID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_AddEsimProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".AddEsimProfileRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}sim_id\0\u{3}profile_id\0\u{1}name\0\u{1}iccid\0\u{3}operator_name\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.simID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.profileID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.iccid) }()
+      case 5: try { try decoder.decodeSingularStringField(value: &self.operatorName) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.simID.isEmpty {
+      try visitor.visitSingularStringField(value: self.simID, fieldNumber: 1)
+    }
+    if !self.profileID.isEmpty {
+      try visitor.visitSingularStringField(value: self.profileID, fieldNumber: 2)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
+    }
+    if !self.iccid.isEmpty {
+      try visitor.visitSingularStringField(value: self.iccid, fieldNumber: 4)
+    }
+    if !self.operatorName.isEmpty {
+      try visitor.visitSingularStringField(value: self.operatorName, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_AddEsimProfileRequest, rhs: Relay_Communication_V1_AddEsimProfileRequest) -> Bool {
+    if lhs.simID != rhs.simID {return false}
+    if lhs.profileID != rhs.profileID {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.iccid != rhs.iccid {return false}
+    if lhs.operatorName != rhs.operatorName {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_RenameEsimProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".RenameEsimProfileRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}sim_id\0\u{3}profile_id\0\u{1}name\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.simID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.profileID) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.simID.isEmpty {
+      try visitor.visitSingularStringField(value: self.simID, fieldNumber: 1)
+    }
+    if !self.profileID.isEmpty {
+      try visitor.visitSingularStringField(value: self.profileID, fieldNumber: 2)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_RenameEsimProfileRequest, rhs: Relay_Communication_V1_RenameEsimProfileRequest) -> Bool {
+    if lhs.simID != rhs.simID {return false}
+    if lhs.profileID != rhs.profileID {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_SetEsimProfileEnabledRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SetEsimProfileEnabledRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}sim_id\0\u{3}profile_id\0\u{1}enabled\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.simID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.profileID) }()
+      case 3: try { try decoder.decodeSingularBoolField(value: &self.enabled) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.simID.isEmpty {
+      try visitor.visitSingularStringField(value: self.simID, fieldNumber: 1)
+    }
+    if !self.profileID.isEmpty {
+      try visitor.visitSingularStringField(value: self.profileID, fieldNumber: 2)
+    }
+    if self.enabled != false {
+      try visitor.visitSingularBoolField(value: self.enabled, fieldNumber: 3)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_SetEsimProfileEnabledRequest, rhs: Relay_Communication_V1_SetEsimProfileEnabledRequest) -> Bool {
+    if lhs.simID != rhs.simID {return false}
+    if lhs.profileID != rhs.profileID {return false}
+    if lhs.enabled != rhs.enabled {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_DeleteEsimProfileRequest: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".DeleteEsimProfileRequest"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}sim_id\0\u{3}profile_id\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.simID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.profileID) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.simID.isEmpty {
+      try visitor.visitSingularStringField(value: self.simID, fieldNumber: 1)
+    }
+    if !self.profileID.isEmpty {
+      try visitor.visitSingularStringField(value: self.profileID, fieldNumber: 2)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_DeleteEsimProfileRequest, rhs: Relay_Communication_V1_DeleteEsimProfileRequest) -> Bool {
+    if lhs.simID != rhs.simID {return false}
+    if lhs.profileID != rhs.profileID {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_EsimProfile: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".EsimProfile"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{3}profile_id\0\u{1}name\0\u{1}iccid\0\u{3}operator_name\0\u{3}is_enabled\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularStringField(value: &self.profileID) }()
+      case 2: try { try decoder.decodeSingularStringField(value: &self.name) }()
+      case 3: try { try decoder.decodeSingularStringField(value: &self.iccid) }()
+      case 4: try { try decoder.decodeSingularStringField(value: &self.operatorName) }()
+      case 5: try { try decoder.decodeSingularBoolField(value: &self.isEnabled) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.profileID.isEmpty {
+      try visitor.visitSingularStringField(value: self.profileID, fieldNumber: 1)
+    }
+    if !self.name.isEmpty {
+      try visitor.visitSingularStringField(value: self.name, fieldNumber: 2)
+    }
+    if !self.iccid.isEmpty {
+      try visitor.visitSingularStringField(value: self.iccid, fieldNumber: 3)
+    }
+    if !self.operatorName.isEmpty {
+      try visitor.visitSingularStringField(value: self.operatorName, fieldNumber: 4)
+    }
+    if self.isEnabled != false {
+      try visitor.visitSingularBoolField(value: self.isEnabled, fieldNumber: 5)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_EsimProfile, rhs: Relay_Communication_V1_EsimProfile) -> Bool {
+    if lhs.profileID != rhs.profileID {return false}
+    if lhs.name != rhs.name {return false}
+    if lhs.iccid != rhs.iccid {return false}
+    if lhs.operatorName != rhs.operatorName {return false}
+    if lhs.isEnabled != rhs.isEnabled {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_ListEsimProfilesResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".ListEsimProfilesResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}profiles\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeRepeatedMessageField(value: &self.profiles) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    if !self.profiles.isEmpty {
+      try visitor.visitRepeatedMessageField(value: self.profiles, fieldNumber: 1)
+    }
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_ListEsimProfilesResponse, rhs: Relay_Communication_V1_ListEsimProfilesResponse) -> Bool {
+    if lhs.profiles != rhs.profiles {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_AddEsimProfileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".AddEsimProfileResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}profile\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._profile) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._profile {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_AddEsimProfileResponse, rhs: Relay_Communication_V1_AddEsimProfileResponse) -> Bool {
+    if lhs._profile != rhs._profile {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_RenameEsimProfileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".RenameEsimProfileResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}profile\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._profile) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._profile {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_RenameEsimProfileResponse, rhs: Relay_Communication_V1_RenameEsimProfileResponse) -> Bool {
+    if lhs._profile != rhs._profile {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_SetEsimProfileEnabledResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".SetEsimProfileEnabledResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap(bytecode: "\0\u{1}profile\0")
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    while let fieldNumber = try decoder.nextFieldNumber() {
+      // The use of inline closures is to circumvent an issue where the compiler
+      // allocates stack space for every case branch when no optimizations are
+      // enabled. https://github.com/apple/swift-protobuf/issues/1034
+      switch fieldNumber {
+      case 1: try { try decoder.decodeSingularMessageField(value: &self._profile) }()
+      default: break
+      }
+    }
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    // The use of inline closures is to circumvent an issue where the compiler
+    // allocates stack space for every if/case branch local when no optimizations
+    // are enabled. https://github.com/apple/swift-protobuf/issues/1034 and
+    // https://github.com/apple/swift-protobuf/issues/1182
+    try { if let v = self._profile {
+      try visitor.visitSingularMessageField(value: v, fieldNumber: 1)
+    } }()
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_SetEsimProfileEnabledResponse, rhs: Relay_Communication_V1_SetEsimProfileEnabledResponse) -> Bool {
+    if lhs._profile != rhs._profile {return false}
+    if lhs.unknownFields != rhs.unknownFields {return false}
+    return true
+  }
+}
+
+nonisolated extension Relay_Communication_V1_DeleteEsimProfileResponse: SwiftProtobuf.Message, SwiftProtobuf._MessageImplementationBase, SwiftProtobuf._ProtoNameProviding {
+  public static let protoMessageName: String = _protobuf_package + ".DeleteEsimProfileResponse"
+  public static let _protobuf_nameMap = SwiftProtobuf._NameMap()
+
+  public mutating func decodeMessage<D: SwiftProtobuf.Decoder>(decoder: inout D) throws {
+    // Load everything into unknown fields
+    while try decoder.nextFieldNumber() != nil {}
+  }
+
+  public func traverse<V: SwiftProtobuf.Visitor>(visitor: inout V) throws {
+    try unknownFields.traverse(visitor: &visitor)
+  }
+
+  public static func ==(lhs: Relay_Communication_V1_DeleteEsimProfileResponse, rhs: Relay_Communication_V1_DeleteEsimProfileResponse) -> Bool {
     if lhs.unknownFields != rhs.unknownFields {return false}
     return true
   }

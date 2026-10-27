@@ -94,6 +94,586 @@ func (*ListSimCardsRequest) Descriptor() ([]byte, []int) {
 	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{1}
 }
 
+type ListEsimProfilesRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SimId         string                 `protobuf:"bytes,1,opt,name=sim_id,json=simId,proto3" json:"sim_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListEsimProfilesRequest) Reset() {
+	*x = ListEsimProfilesRequest{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListEsimProfilesRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListEsimProfilesRequest) ProtoMessage() {}
+
+func (x *ListEsimProfilesRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListEsimProfilesRequest.ProtoReflect.Descriptor instead.
+func (*ListEsimProfilesRequest) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ListEsimProfilesRequest) GetSimId() string {
+	if x != nil {
+		return x.SimId
+	}
+	return ""
+}
+
+type AddEsimProfileRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SimId         string                 `protobuf:"bytes,1,opt,name=sim_id,json=simId,proto3" json:"sim_id,omitempty"`
+	ProfileId     string                 `protobuf:"bytes,2,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	Iccid         string                 `protobuf:"bytes,4,opt,name=iccid,proto3" json:"iccid,omitempty"`
+	OperatorName  string                 `protobuf:"bytes,5,opt,name=operator_name,json=operatorName,proto3" json:"operator_name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddEsimProfileRequest) Reset() {
+	*x = AddEsimProfileRequest{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddEsimProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddEsimProfileRequest) ProtoMessage() {}
+
+func (x *AddEsimProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddEsimProfileRequest.ProtoReflect.Descriptor instead.
+func (*AddEsimProfileRequest) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *AddEsimProfileRequest) GetSimId() string {
+	if x != nil {
+		return x.SimId
+	}
+	return ""
+}
+
+func (x *AddEsimProfileRequest) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+func (x *AddEsimProfileRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *AddEsimProfileRequest) GetIccid() string {
+	if x != nil {
+		return x.Iccid
+	}
+	return ""
+}
+
+func (x *AddEsimProfileRequest) GetOperatorName() string {
+	if x != nil {
+		return x.OperatorName
+	}
+	return ""
+}
+
+type RenameEsimProfileRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SimId         string                 `protobuf:"bytes,1,opt,name=sim_id,json=simId,proto3" json:"sim_id,omitempty"`
+	ProfileId     string                 `protobuf:"bytes,2,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	Name          string                 `protobuf:"bytes,3,opt,name=name,proto3" json:"name,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RenameEsimProfileRequest) Reset() {
+	*x = RenameEsimProfileRequest{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RenameEsimProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RenameEsimProfileRequest) ProtoMessage() {}
+
+func (x *RenameEsimProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RenameEsimProfileRequest.ProtoReflect.Descriptor instead.
+func (*RenameEsimProfileRequest) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *RenameEsimProfileRequest) GetSimId() string {
+	if x != nil {
+		return x.SimId
+	}
+	return ""
+}
+
+func (x *RenameEsimProfileRequest) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+func (x *RenameEsimProfileRequest) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+type SetEsimProfileEnabledRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SimId         string                 `protobuf:"bytes,1,opt,name=sim_id,json=simId,proto3" json:"sim_id,omitempty"`
+	ProfileId     string                 `protobuf:"bytes,2,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	Enabled       bool                   `protobuf:"varint,3,opt,name=enabled,proto3" json:"enabled,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetEsimProfileEnabledRequest) Reset() {
+	*x = SetEsimProfileEnabledRequest{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetEsimProfileEnabledRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetEsimProfileEnabledRequest) ProtoMessage() {}
+
+func (x *SetEsimProfileEnabledRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetEsimProfileEnabledRequest.ProtoReflect.Descriptor instead.
+func (*SetEsimProfileEnabledRequest) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *SetEsimProfileEnabledRequest) GetSimId() string {
+	if x != nil {
+		return x.SimId
+	}
+	return ""
+}
+
+func (x *SetEsimProfileEnabledRequest) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+func (x *SetEsimProfileEnabledRequest) GetEnabled() bool {
+	if x != nil {
+		return x.Enabled
+	}
+	return false
+}
+
+type DeleteEsimProfileRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	SimId         string                 `protobuf:"bytes,1,opt,name=sim_id,json=simId,proto3" json:"sim_id,omitempty"`
+	ProfileId     string                 `protobuf:"bytes,2,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteEsimProfileRequest) Reset() {
+	*x = DeleteEsimProfileRequest{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteEsimProfileRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteEsimProfileRequest) ProtoMessage() {}
+
+func (x *DeleteEsimProfileRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteEsimProfileRequest.ProtoReflect.Descriptor instead.
+func (*DeleteEsimProfileRequest) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *DeleteEsimProfileRequest) GetSimId() string {
+	if x != nil {
+		return x.SimId
+	}
+	return ""
+}
+
+func (x *DeleteEsimProfileRequest) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+type EsimProfile struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	ProfileId     string                 `protobuf:"bytes,1,opt,name=profile_id,json=profileId,proto3" json:"profile_id,omitempty"`
+	Name          string                 `protobuf:"bytes,2,opt,name=name,proto3" json:"name,omitempty"`
+	Iccid         string                 `protobuf:"bytes,3,opt,name=iccid,proto3" json:"iccid,omitempty"`
+	OperatorName  string                 `protobuf:"bytes,4,opt,name=operator_name,json=operatorName,proto3" json:"operator_name,omitempty"`
+	IsEnabled     bool                   `protobuf:"varint,5,opt,name=is_enabled,json=isEnabled,proto3" json:"is_enabled,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *EsimProfile) Reset() {
+	*x = EsimProfile{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *EsimProfile) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*EsimProfile) ProtoMessage() {}
+
+func (x *EsimProfile) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use EsimProfile.ProtoReflect.Descriptor instead.
+func (*EsimProfile) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *EsimProfile) GetProfileId() string {
+	if x != nil {
+		return x.ProfileId
+	}
+	return ""
+}
+
+func (x *EsimProfile) GetName() string {
+	if x != nil {
+		return x.Name
+	}
+	return ""
+}
+
+func (x *EsimProfile) GetIccid() string {
+	if x != nil {
+		return x.Iccid
+	}
+	return ""
+}
+
+func (x *EsimProfile) GetOperatorName() string {
+	if x != nil {
+		return x.OperatorName
+	}
+	return ""
+}
+
+func (x *EsimProfile) GetIsEnabled() bool {
+	if x != nil {
+		return x.IsEnabled
+	}
+	return false
+}
+
+type ListEsimProfilesResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Profiles      []*EsimProfile         `protobuf:"bytes,1,rep,name=profiles,proto3" json:"profiles,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ListEsimProfilesResponse) Reset() {
+	*x = ListEsimProfilesResponse{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ListEsimProfilesResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ListEsimProfilesResponse) ProtoMessage() {}
+
+func (x *ListEsimProfilesResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ListEsimProfilesResponse.ProtoReflect.Descriptor instead.
+func (*ListEsimProfilesResponse) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *ListEsimProfilesResponse) GetProfiles() []*EsimProfile {
+	if x != nil {
+		return x.Profiles
+	}
+	return nil
+}
+
+type AddEsimProfileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Profile       *EsimProfile           `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *AddEsimProfileResponse) Reset() {
+	*x = AddEsimProfileResponse{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *AddEsimProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*AddEsimProfileResponse) ProtoMessage() {}
+
+func (x *AddEsimProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use AddEsimProfileResponse.ProtoReflect.Descriptor instead.
+func (*AddEsimProfileResponse) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *AddEsimProfileResponse) GetProfile() *EsimProfile {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+type RenameEsimProfileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Profile       *EsimProfile           `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RenameEsimProfileResponse) Reset() {
+	*x = RenameEsimProfileResponse{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[10]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RenameEsimProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RenameEsimProfileResponse) ProtoMessage() {}
+
+func (x *RenameEsimProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[10]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RenameEsimProfileResponse.ProtoReflect.Descriptor instead.
+func (*RenameEsimProfileResponse) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{10}
+}
+
+func (x *RenameEsimProfileResponse) GetProfile() *EsimProfile {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+type SetEsimProfileEnabledResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Profile       *EsimProfile           `protobuf:"bytes,1,opt,name=profile,proto3" json:"profile,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SetEsimProfileEnabledResponse) Reset() {
+	*x = SetEsimProfileEnabledResponse{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[11]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SetEsimProfileEnabledResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SetEsimProfileEnabledResponse) ProtoMessage() {}
+
+func (x *SetEsimProfileEnabledResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[11]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SetEsimProfileEnabledResponse.ProtoReflect.Descriptor instead.
+func (*SetEsimProfileEnabledResponse) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{11}
+}
+
+func (x *SetEsimProfileEnabledResponse) GetProfile() *EsimProfile {
+	if x != nil {
+		return x.Profile
+	}
+	return nil
+}
+
+type DeleteEsimProfileResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DeleteEsimProfileResponse) Reset() {
+	*x = DeleteEsimProfileResponse{}
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[12]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DeleteEsimProfileResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DeleteEsimProfileResponse) ProtoMessage() {}
+
+func (x *DeleteEsimProfileResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[12]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DeleteEsimProfileResponse.ProtoReflect.Descriptor instead.
+func (*DeleteEsimProfileResponse) Descriptor() ([]byte, []int) {
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{12}
+}
+
 type RetireSimCardRequest struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
 	SimId         string                 `protobuf:"bytes,1,opt,name=sim_id,json=simId,proto3" json:"sim_id,omitempty"`
@@ -103,7 +683,7 @@ type RetireSimCardRequest struct {
 
 func (x *RetireSimCardRequest) Reset() {
 	*x = RetireSimCardRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[2]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[13]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -115,7 +695,7 @@ func (x *RetireSimCardRequest) String() string {
 func (*RetireSimCardRequest) ProtoMessage() {}
 
 func (x *RetireSimCardRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[2]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[13]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -128,7 +708,7 @@ func (x *RetireSimCardRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RetireSimCardRequest.ProtoReflect.Descriptor instead.
 func (*RetireSimCardRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{2}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{13}
 }
 
 func (x *RetireSimCardRequest) GetSimId() string {
@@ -146,7 +726,7 @@ type RetireSimCardResponse struct {
 
 func (x *RetireSimCardResponse) Reset() {
 	*x = RetireSimCardResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[3]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[14]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -158,7 +738,7 @@ func (x *RetireSimCardResponse) String() string {
 func (*RetireSimCardResponse) ProtoMessage() {}
 
 func (x *RetireSimCardResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[3]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[14]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -171,7 +751,7 @@ func (x *RetireSimCardResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RetireSimCardResponse.ProtoReflect.Descriptor instead.
 func (*RetireSimCardResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{3}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{14}
 }
 
 type UpdateDeviceNumericIdRequest struct {
@@ -184,7 +764,7 @@ type UpdateDeviceNumericIdRequest struct {
 
 func (x *UpdateDeviceNumericIdRequest) Reset() {
 	*x = UpdateDeviceNumericIdRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[4]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[15]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -196,7 +776,7 @@ func (x *UpdateDeviceNumericIdRequest) String() string {
 func (*UpdateDeviceNumericIdRequest) ProtoMessage() {}
 
 func (x *UpdateDeviceNumericIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[4]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[15]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -209,7 +789,7 @@ func (x *UpdateDeviceNumericIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceNumericIdRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceNumericIdRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{4}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{15}
 }
 
 func (x *UpdateDeviceNumericIdRequest) GetId() string {
@@ -234,7 +814,7 @@ type UpdateDeviceNumericIdResponse struct {
 
 func (x *UpdateDeviceNumericIdResponse) Reset() {
 	*x = UpdateDeviceNumericIdResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[5]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[16]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -246,7 +826,7 @@ func (x *UpdateDeviceNumericIdResponse) String() string {
 func (*UpdateDeviceNumericIdResponse) ProtoMessage() {}
 
 func (x *UpdateDeviceNumericIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[5]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[16]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -259,7 +839,7 @@ func (x *UpdateDeviceNumericIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceNumericIdResponse.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceNumericIdResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{5}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{16}
 }
 
 type UpdateDeviceProfileRequest struct {
@@ -272,7 +852,7 @@ type UpdateDeviceProfileRequest struct {
 
 func (x *UpdateDeviceProfileRequest) Reset() {
 	*x = UpdateDeviceProfileRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[6]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[17]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -284,7 +864,7 @@ func (x *UpdateDeviceProfileRequest) String() string {
 func (*UpdateDeviceProfileRequest) ProtoMessage() {}
 
 func (x *UpdateDeviceProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[6]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[17]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -297,7 +877,7 @@ func (x *UpdateDeviceProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceProfileRequest.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceProfileRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{6}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{17}
 }
 
 func (x *UpdateDeviceProfileRequest) GetId() string {
@@ -322,7 +902,7 @@ type UpdateDeviceProfileResponse struct {
 
 func (x *UpdateDeviceProfileResponse) Reset() {
 	*x = UpdateDeviceProfileResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[7]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[18]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -334,7 +914,7 @@ func (x *UpdateDeviceProfileResponse) String() string {
 func (*UpdateDeviceProfileResponse) ProtoMessage() {}
 
 func (x *UpdateDeviceProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[7]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[18]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -347,7 +927,7 @@ func (x *UpdateDeviceProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateDeviceProfileResponse.ProtoReflect.Descriptor instead.
 func (*UpdateDeviceProfileResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{7}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{18}
 }
 
 type UpdateSimNumericIdRequest struct {
@@ -360,7 +940,7 @@ type UpdateSimNumericIdRequest struct {
 
 func (x *UpdateSimNumericIdRequest) Reset() {
 	*x = UpdateSimNumericIdRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[8]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[19]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -372,7 +952,7 @@ func (x *UpdateSimNumericIdRequest) String() string {
 func (*UpdateSimNumericIdRequest) ProtoMessage() {}
 
 func (x *UpdateSimNumericIdRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[8]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[19]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -385,7 +965,7 @@ func (x *UpdateSimNumericIdRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSimNumericIdRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSimNumericIdRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{8}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{19}
 }
 
 func (x *UpdateSimNumericIdRequest) GetId() string {
@@ -410,7 +990,7 @@ type UpdateSimNumericIdResponse struct {
 
 func (x *UpdateSimNumericIdResponse) Reset() {
 	*x = UpdateSimNumericIdResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[9]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[20]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -422,7 +1002,7 @@ func (x *UpdateSimNumericIdResponse) String() string {
 func (*UpdateSimNumericIdResponse) ProtoMessage() {}
 
 func (x *UpdateSimNumericIdResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[9]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[20]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -435,7 +1015,7 @@ func (x *UpdateSimNumericIdResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSimNumericIdResponse.ProtoReflect.Descriptor instead.
 func (*UpdateSimNumericIdResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{9}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{20}
 }
 
 type UpdateSimProfileRequest struct {
@@ -448,7 +1028,7 @@ type UpdateSimProfileRequest struct {
 
 func (x *UpdateSimProfileRequest) Reset() {
 	*x = UpdateSimProfileRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[10]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[21]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -460,7 +1040,7 @@ func (x *UpdateSimProfileRequest) String() string {
 func (*UpdateSimProfileRequest) ProtoMessage() {}
 
 func (x *UpdateSimProfileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[10]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[21]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -473,7 +1053,7 @@ func (x *UpdateSimProfileRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSimProfileRequest.ProtoReflect.Descriptor instead.
 func (*UpdateSimProfileRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{10}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{21}
 }
 
 func (x *UpdateSimProfileRequest) GetId() string {
@@ -498,7 +1078,7 @@ type UpdateSimProfileResponse struct {
 
 func (x *UpdateSimProfileResponse) Reset() {
 	*x = UpdateSimProfileResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[11]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[22]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -510,7 +1090,7 @@ func (x *UpdateSimProfileResponse) String() string {
 func (*UpdateSimProfileResponse) ProtoMessage() {}
 
 func (x *UpdateSimProfileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[11]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[22]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -523,7 +1103,7 @@ func (x *UpdateSimProfileResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpdateSimProfileResponse.ProtoReflect.Descriptor instead.
 func (*UpdateSimProfileResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{11}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{22}
 }
 
 type RevokeDeviceRequest struct {
@@ -535,7 +1115,7 @@ type RevokeDeviceRequest struct {
 
 func (x *RevokeDeviceRequest) Reset() {
 	*x = RevokeDeviceRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[12]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[23]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -547,7 +1127,7 @@ func (x *RevokeDeviceRequest) String() string {
 func (*RevokeDeviceRequest) ProtoMessage() {}
 
 func (x *RevokeDeviceRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[12]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[23]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -560,7 +1140,7 @@ func (x *RevokeDeviceRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeDeviceRequest.ProtoReflect.Descriptor instead.
 func (*RevokeDeviceRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{12}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{23}
 }
 
 func (x *RevokeDeviceRequest) GetDeviceUuid() string {
@@ -578,7 +1158,7 @@ type RevokeDeviceResponse struct {
 
 func (x *RevokeDeviceResponse) Reset() {
 	*x = RevokeDeviceResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[13]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[24]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -590,7 +1170,7 @@ func (x *RevokeDeviceResponse) String() string {
 func (*RevokeDeviceResponse) ProtoMessage() {}
 
 func (x *RevokeDeviceResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[13]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[24]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -603,7 +1183,7 @@ func (x *RevokeDeviceResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RevokeDeviceResponse.ProtoReflect.Descriptor instead.
 func (*RevokeDeviceResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{13}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{24}
 }
 
 type CreatePairingTokenRequest struct {
@@ -614,7 +1194,7 @@ type CreatePairingTokenRequest struct {
 
 func (x *CreatePairingTokenRequest) Reset() {
 	*x = CreatePairingTokenRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[14]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[25]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -626,7 +1206,7 @@ func (x *CreatePairingTokenRequest) String() string {
 func (*CreatePairingTokenRequest) ProtoMessage() {}
 
 func (x *CreatePairingTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[14]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[25]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -639,7 +1219,7 @@ func (x *CreatePairingTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePairingTokenRequest.ProtoReflect.Descriptor instead.
 func (*CreatePairingTokenRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{14}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{25}
 }
 
 type ListDevicesResponse struct {
@@ -651,7 +1231,7 @@ type ListDevicesResponse struct {
 
 func (x *ListDevicesResponse) Reset() {
 	*x = ListDevicesResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[15]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[26]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -663,7 +1243,7 @@ func (x *ListDevicesResponse) String() string {
 func (*ListDevicesResponse) ProtoMessage() {}
 
 func (x *ListDevicesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[15]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[26]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -676,7 +1256,7 @@ func (x *ListDevicesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDevicesResponse.ProtoReflect.Descriptor instead.
 func (*ListDevicesResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{15}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{26}
 }
 
 func (x *ListDevicesResponse) GetDevices() []*DeviceRecord {
@@ -706,7 +1286,7 @@ type DeviceRecord struct {
 
 func (x *DeviceRecord) Reset() {
 	*x = DeviceRecord{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[16]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[27]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -718,7 +1298,7 @@ func (x *DeviceRecord) String() string {
 func (*DeviceRecord) ProtoMessage() {}
 
 func (x *DeviceRecord) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[16]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[27]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -731,7 +1311,7 @@ func (x *DeviceRecord) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceRecord.ProtoReflect.Descriptor instead.
 func (*DeviceRecord) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{16}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{27}
 }
 
 func (x *DeviceRecord) GetDeviceUuid() string {
@@ -836,7 +1416,7 @@ type SlotRecord struct {
 
 func (x *SlotRecord) Reset() {
 	*x = SlotRecord{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[17]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[28]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -848,7 +1428,7 @@ func (x *SlotRecord) String() string {
 func (*SlotRecord) ProtoMessage() {}
 
 func (x *SlotRecord) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[17]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[28]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -861,7 +1441,7 @@ func (x *SlotRecord) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SlotRecord.ProtoReflect.Descriptor instead.
 func (*SlotRecord) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{17}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{28}
 }
 
 func (x *SlotRecord) GetSlotId() string {
@@ -943,7 +1523,7 @@ type ListSimCardsResponse struct {
 
 func (x *ListSimCardsResponse) Reset() {
 	*x = ListSimCardsResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[18]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[29]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -955,7 +1535,7 @@ func (x *ListSimCardsResponse) String() string {
 func (*ListSimCardsResponse) ProtoMessage() {}
 
 func (x *ListSimCardsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[18]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[29]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -968,7 +1548,7 @@ func (x *ListSimCardsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListSimCardsResponse.ProtoReflect.Descriptor instead.
 func (*ListSimCardsResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{18}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{29}
 }
 
 func (x *ListSimCardsResponse) GetSims() []*SimRecord {
@@ -993,7 +1573,7 @@ type SimRecord struct {
 
 func (x *SimRecord) Reset() {
 	*x = SimRecord{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[19]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[30]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1005,7 +1585,7 @@ func (x *SimRecord) String() string {
 func (*SimRecord) ProtoMessage() {}
 
 func (x *SimRecord) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[19]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[30]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1018,7 +1598,7 @@ func (x *SimRecord) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SimRecord.ProtoReflect.Descriptor instead.
 func (*SimRecord) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{19}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{30}
 }
 
 func (x *SimRecord) GetSimId() string {
@@ -1080,7 +1660,7 @@ type CreatePairingTokenResponse struct {
 
 func (x *CreatePairingTokenResponse) Reset() {
 	*x = CreatePairingTokenResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[20]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[31]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1092,7 +1672,7 @@ func (x *CreatePairingTokenResponse) String() string {
 func (*CreatePairingTokenResponse) ProtoMessage() {}
 
 func (x *CreatePairingTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[20]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[31]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1105,7 +1685,7 @@ func (x *CreatePairingTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CreatePairingTokenResponse.ProtoReflect.Descriptor instead.
 func (*CreatePairingTokenResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{20}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{31}
 }
 
 func (x *CreatePairingTokenResponse) GetPairingToken() string {
@@ -1130,7 +1710,7 @@ type OpenDeviceDiscoveryRequest struct {
 
 func (x *OpenDeviceDiscoveryRequest) Reset() {
 	*x = OpenDeviceDiscoveryRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[21]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[32]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1142,7 +1722,7 @@ func (x *OpenDeviceDiscoveryRequest) String() string {
 func (*OpenDeviceDiscoveryRequest) ProtoMessage() {}
 
 func (x *OpenDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[21]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[32]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1155,7 +1735,7 @@ func (x *OpenDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OpenDeviceDiscoveryRequest.ProtoReflect.Descriptor instead.
 func (*OpenDeviceDiscoveryRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{21}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{32}
 }
 
 type OpenDeviceDiscoveryResponse struct {
@@ -1168,7 +1748,7 @@ type OpenDeviceDiscoveryResponse struct {
 
 func (x *OpenDeviceDiscoveryResponse) Reset() {
 	*x = OpenDeviceDiscoveryResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[22]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[33]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1180,7 +1760,7 @@ func (x *OpenDeviceDiscoveryResponse) String() string {
 func (*OpenDeviceDiscoveryResponse) ProtoMessage() {}
 
 func (x *OpenDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[22]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[33]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1193,7 +1773,7 @@ func (x *OpenDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OpenDeviceDiscoveryResponse.ProtoReflect.Descriptor instead.
 func (*OpenDeviceDiscoveryResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{22}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{33}
 }
 
 func (x *OpenDeviceDiscoveryResponse) GetActive() bool {
@@ -1218,7 +1798,7 @@ type GetDeviceDiscoverySessionRequest struct {
 
 func (x *GetDeviceDiscoverySessionRequest) Reset() {
 	*x = GetDeviceDiscoverySessionRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[23]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[34]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1230,7 +1810,7 @@ func (x *GetDeviceDiscoverySessionRequest) String() string {
 func (*GetDeviceDiscoverySessionRequest) ProtoMessage() {}
 
 func (x *GetDeviceDiscoverySessionRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[23]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[34]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1243,7 +1823,7 @@ func (x *GetDeviceDiscoverySessionRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetDeviceDiscoverySessionRequest.ProtoReflect.Descriptor instead.
 func (*GetDeviceDiscoverySessionRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{23}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{34}
 }
 
 type GetDeviceDiscoverySessionResponse struct {
@@ -1256,7 +1836,7 @@ type GetDeviceDiscoverySessionResponse struct {
 
 func (x *GetDeviceDiscoverySessionResponse) Reset() {
 	*x = GetDeviceDiscoverySessionResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[24]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[35]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1268,7 +1848,7 @@ func (x *GetDeviceDiscoverySessionResponse) String() string {
 func (*GetDeviceDiscoverySessionResponse) ProtoMessage() {}
 
 func (x *GetDeviceDiscoverySessionResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[24]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[35]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1281,7 +1861,7 @@ func (x *GetDeviceDiscoverySessionResponse) ProtoReflect() protoreflect.Message 
 
 // Deprecated: Use GetDeviceDiscoverySessionResponse.ProtoReflect.Descriptor instead.
 func (*GetDeviceDiscoverySessionResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{24}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{35}
 }
 
 func (x *GetDeviceDiscoverySessionResponse) GetActive() bool {
@@ -1306,7 +1886,7 @@ type CloseDeviceDiscoveryRequest struct {
 
 func (x *CloseDeviceDiscoveryRequest) Reset() {
 	*x = CloseDeviceDiscoveryRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[25]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[36]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1318,7 +1898,7 @@ func (x *CloseDeviceDiscoveryRequest) String() string {
 func (*CloseDeviceDiscoveryRequest) ProtoMessage() {}
 
 func (x *CloseDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[25]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[36]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1331,7 +1911,7 @@ func (x *CloseDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CloseDeviceDiscoveryRequest.ProtoReflect.Descriptor instead.
 func (*CloseDeviceDiscoveryRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{25}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{36}
 }
 
 type CloseDeviceDiscoveryResponse struct {
@@ -1342,7 +1922,7 @@ type CloseDeviceDiscoveryResponse struct {
 
 func (x *CloseDeviceDiscoveryResponse) Reset() {
 	*x = CloseDeviceDiscoveryResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[26]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[37]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1354,7 +1934,7 @@ func (x *CloseDeviceDiscoveryResponse) String() string {
 func (*CloseDeviceDiscoveryResponse) ProtoMessage() {}
 
 func (x *CloseDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[26]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[37]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1367,7 +1947,7 @@ func (x *CloseDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CloseDeviceDiscoveryResponse.ProtoReflect.Descriptor instead.
 func (*CloseDeviceDiscoveryResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{26}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{37}
 }
 
 type ListDeviceDiscoveriesRequest struct {
@@ -1378,7 +1958,7 @@ type ListDeviceDiscoveriesRequest struct {
 
 func (x *ListDeviceDiscoveriesRequest) Reset() {
 	*x = ListDeviceDiscoveriesRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[27]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[38]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1390,7 +1970,7 @@ func (x *ListDeviceDiscoveriesRequest) String() string {
 func (*ListDeviceDiscoveriesRequest) ProtoMessage() {}
 
 func (x *ListDeviceDiscoveriesRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[27]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[38]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1403,7 +1983,7 @@ func (x *ListDeviceDiscoveriesRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDeviceDiscoveriesRequest.ProtoReflect.Descriptor instead.
 func (*ListDeviceDiscoveriesRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{27}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{38}
 }
 
 type DeviceDiscoverySession struct {
@@ -1417,7 +1997,7 @@ type DeviceDiscoverySession struct {
 
 func (x *DeviceDiscoverySession) Reset() {
 	*x = DeviceDiscoverySession{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[28]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[39]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1429,7 +2009,7 @@ func (x *DeviceDiscoverySession) String() string {
 func (*DeviceDiscoverySession) ProtoMessage() {}
 
 func (x *DeviceDiscoverySession) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[28]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[39]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1442,7 +2022,7 @@ func (x *DeviceDiscoverySession) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeviceDiscoverySession.ProtoReflect.Descriptor instead.
 func (*DeviceDiscoverySession) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{28}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{39}
 }
 
 func (x *DeviceDiscoverySession) GetOpenedAt() *timestamppb.Timestamp {
@@ -1475,7 +2055,7 @@ type ListDeviceDiscoveriesResponse struct {
 
 func (x *ListDeviceDiscoveriesResponse) Reset() {
 	*x = ListDeviceDiscoveriesResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[29]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1487,7 +2067,7 @@ func (x *ListDeviceDiscoveriesResponse) String() string {
 func (*ListDeviceDiscoveriesResponse) ProtoMessage() {}
 
 func (x *ListDeviceDiscoveriesResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[29]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1500,7 +2080,7 @@ func (x *ListDeviceDiscoveriesResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ListDeviceDiscoveriesResponse.ProtoReflect.Descriptor instead.
 func (*ListDeviceDiscoveriesResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{29}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *ListDeviceDiscoveriesResponse) GetDiscoveries() []*OwnerDeviceDiscovery {
@@ -1519,7 +2099,7 @@ type ApproveDeviceDiscoveryRequest struct {
 
 func (x *ApproveDeviceDiscoveryRequest) Reset() {
 	*x = ApproveDeviceDiscoveryRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[30]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1531,7 +2111,7 @@ func (x *ApproveDeviceDiscoveryRequest) String() string {
 func (*ApproveDeviceDiscoveryRequest) ProtoMessage() {}
 
 func (x *ApproveDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[30]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1544,7 +2124,7 @@ func (x *ApproveDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApproveDeviceDiscoveryRequest.ProtoReflect.Descriptor instead.
 func (*ApproveDeviceDiscoveryRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{30}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *ApproveDeviceDiscoveryRequest) GetDeviceUuid() string {
@@ -1563,7 +2143,7 @@ type ApproveDeviceDiscoveryResponse struct {
 
 func (x *ApproveDeviceDiscoveryResponse) Reset() {
 	*x = ApproveDeviceDiscoveryResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[31]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1575,7 +2155,7 @@ func (x *ApproveDeviceDiscoveryResponse) String() string {
 func (*ApproveDeviceDiscoveryResponse) ProtoMessage() {}
 
 func (x *ApproveDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[31]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1588,7 +2168,7 @@ func (x *ApproveDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ApproveDeviceDiscoveryResponse.ProtoReflect.Descriptor instead.
 func (*ApproveDeviceDiscoveryResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{31}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *ApproveDeviceDiscoveryResponse) GetDevice() *OwnerDeviceDiscovery {
@@ -1607,7 +2187,7 @@ type RejectDeviceDiscoveryRequest struct {
 
 func (x *RejectDeviceDiscoveryRequest) Reset() {
 	*x = RejectDeviceDiscoveryRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[32]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1619,7 +2199,7 @@ func (x *RejectDeviceDiscoveryRequest) String() string {
 func (*RejectDeviceDiscoveryRequest) ProtoMessage() {}
 
 func (x *RejectDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[32]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1632,7 +2212,7 @@ func (x *RejectDeviceDiscoveryRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RejectDeviceDiscoveryRequest.ProtoReflect.Descriptor instead.
 func (*RejectDeviceDiscoveryRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{32}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *RejectDeviceDiscoveryRequest) GetDeviceUuid() string {
@@ -1650,7 +2230,7 @@ type RejectDeviceDiscoveryResponse struct {
 
 func (x *RejectDeviceDiscoveryResponse) Reset() {
 	*x = RejectDeviceDiscoveryResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[33]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1662,7 +2242,7 @@ func (x *RejectDeviceDiscoveryResponse) String() string {
 func (*RejectDeviceDiscoveryResponse) ProtoMessage() {}
 
 func (x *RejectDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[33]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1675,7 +2255,7 @@ func (x *RejectDeviceDiscoveryResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RejectDeviceDiscoveryResponse.ProtoReflect.Descriptor instead.
 func (*RejectDeviceDiscoveryResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{33}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{44}
 }
 
 type OwnerDeviceDiscovery struct {
@@ -1698,7 +2278,7 @@ type OwnerDeviceDiscovery struct {
 
 func (x *OwnerDeviceDiscovery) Reset() {
 	*x = OwnerDeviceDiscovery{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[34]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1710,7 +2290,7 @@ func (x *OwnerDeviceDiscovery) String() string {
 func (*OwnerDeviceDiscovery) ProtoMessage() {}
 
 func (x *OwnerDeviceDiscovery) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[34]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1723,7 +2303,7 @@ func (x *OwnerDeviceDiscovery) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use OwnerDeviceDiscovery.ProtoReflect.Descriptor instead.
 func (*OwnerDeviceDiscovery) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{34}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *OwnerDeviceDiscovery) GetDeviceUuid() string {
@@ -1822,7 +2402,7 @@ type RegisterAppInstallationRequest struct {
 
 func (x *RegisterAppInstallationRequest) Reset() {
 	*x = RegisterAppInstallationRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[35]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1834,7 +2414,7 @@ func (x *RegisterAppInstallationRequest) String() string {
 func (*RegisterAppInstallationRequest) ProtoMessage() {}
 
 func (x *RegisterAppInstallationRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[35]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1847,7 +2427,7 @@ func (x *RegisterAppInstallationRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterAppInstallationRequest.ProtoReflect.Descriptor instead.
 func (*RegisterAppInstallationRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{35}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *RegisterAppInstallationRequest) GetInstallationId() string {
@@ -1888,7 +2468,7 @@ type RegisterAppInstallationResponse struct {
 
 func (x *RegisterAppInstallationResponse) Reset() {
 	*x = RegisterAppInstallationResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[36]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1900,7 +2480,7 @@ func (x *RegisterAppInstallationResponse) String() string {
 func (*RegisterAppInstallationResponse) ProtoMessage() {}
 
 func (x *RegisterAppInstallationResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[36]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1913,7 +2493,7 @@ func (x *RegisterAppInstallationResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use RegisterAppInstallationResponse.ProtoReflect.Descriptor instead.
 func (*RegisterAppInstallationResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{36}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *RegisterAppInstallationResponse) GetInstallation() *AppInstallation {
@@ -1945,7 +2525,7 @@ type AppInstallation struct {
 
 func (x *AppInstallation) Reset() {
 	*x = AppInstallation{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[37]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -1957,7 +2537,7 @@ func (x *AppInstallation) String() string {
 func (*AppInstallation) ProtoMessage() {}
 
 func (x *AppInstallation) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[37]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1970,7 +2550,7 @@ func (x *AppInstallation) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use AppInstallation.ProtoReflect.Descriptor instead.
 func (*AppInstallation) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{37}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *AppInstallation) GetInstallationId() string {
@@ -2034,7 +2614,7 @@ type UpsertPushTokenRequest struct {
 
 func (x *UpsertPushTokenRequest) Reset() {
 	*x = UpsertPushTokenRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[38]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2046,7 +2626,7 @@ func (x *UpsertPushTokenRequest) String() string {
 func (*UpsertPushTokenRequest) ProtoMessage() {}
 
 func (x *UpsertPushTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[38]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2059,7 +2639,7 @@ func (x *UpsertPushTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertPushTokenRequest.ProtoReflect.Descriptor instead.
 func (*UpsertPushTokenRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{38}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *UpsertPushTokenRequest) GetInstallationId() string {
@@ -2098,7 +2678,7 @@ type UpsertPushTokenResponse struct {
 
 func (x *UpsertPushTokenResponse) Reset() {
 	*x = UpsertPushTokenResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[39]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[50]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2110,7 +2690,7 @@ func (x *UpsertPushTokenResponse) String() string {
 func (*UpsertPushTokenResponse) ProtoMessage() {}
 
 func (x *UpsertPushTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[39]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[50]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2123,7 +2703,7 @@ func (x *UpsertPushTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use UpsertPushTokenResponse.ProtoReflect.Descriptor instead.
 func (*UpsertPushTokenResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{39}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{50}
 }
 
 type DeletePushTokenRequest struct {
@@ -2137,7 +2717,7 @@ type DeletePushTokenRequest struct {
 
 func (x *DeletePushTokenRequest) Reset() {
 	*x = DeletePushTokenRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[40]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[51]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2149,7 +2729,7 @@ func (x *DeletePushTokenRequest) String() string {
 func (*DeletePushTokenRequest) ProtoMessage() {}
 
 func (x *DeletePushTokenRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[40]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[51]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2162,7 +2742,7 @@ func (x *DeletePushTokenRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePushTokenRequest.ProtoReflect.Descriptor instead.
 func (*DeletePushTokenRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{40}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{51}
 }
 
 func (x *DeletePushTokenRequest) GetInstallationId() string {
@@ -2194,7 +2774,7 @@ type DeletePushTokenResponse struct {
 
 func (x *DeletePushTokenResponse) Reset() {
 	*x = DeletePushTokenResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[41]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[52]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2206,7 +2786,7 @@ func (x *DeletePushTokenResponse) String() string {
 func (*DeletePushTokenResponse) ProtoMessage() {}
 
 func (x *DeletePushTokenResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[41]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[52]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2219,7 +2799,7 @@ func (x *DeletePushTokenResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use DeletePushTokenResponse.ProtoReflect.Descriptor instead.
 func (*DeletePushTokenResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{41}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{52}
 }
 
 type ClaimIncomingCallRequest struct {
@@ -2232,7 +2812,7 @@ type ClaimIncomingCallRequest struct {
 
 func (x *ClaimIncomingCallRequest) Reset() {
 	*x = ClaimIncomingCallRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[42]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[53]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2244,7 +2824,7 @@ func (x *ClaimIncomingCallRequest) String() string {
 func (*ClaimIncomingCallRequest) ProtoMessage() {}
 
 func (x *ClaimIncomingCallRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[42]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[53]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2257,7 +2837,7 @@ func (x *ClaimIncomingCallRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClaimIncomingCallRequest.ProtoReflect.Descriptor instead.
 func (*ClaimIncomingCallRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{42}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{53}
 }
 
 func (x *ClaimIncomingCallRequest) GetNotificationId() string {
@@ -2286,7 +2866,7 @@ type ClaimIncomingCallResponse struct {
 
 func (x *ClaimIncomingCallResponse) Reset() {
 	*x = ClaimIncomingCallResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[43]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[54]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2298,7 +2878,7 @@ func (x *ClaimIncomingCallResponse) String() string {
 func (*ClaimIncomingCallResponse) ProtoMessage() {}
 
 func (x *ClaimIncomingCallResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[43]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[54]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2311,7 +2891,7 @@ func (x *ClaimIncomingCallResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ClaimIncomingCallResponse.ProtoReflect.Descriptor instead.
 func (*ClaimIncomingCallResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{43}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{54}
 }
 
 func (x *ClaimIncomingCallResponse) GetNotificationId() string {
@@ -2351,7 +2931,7 @@ type EnqueueCommandRequest struct {
 
 func (x *EnqueueCommandRequest) Reset() {
 	*x = EnqueueCommandRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[44]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[55]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2363,7 +2943,7 @@ func (x *EnqueueCommandRequest) String() string {
 func (*EnqueueCommandRequest) ProtoMessage() {}
 
 func (x *EnqueueCommandRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[44]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[55]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2376,7 +2956,7 @@ func (x *EnqueueCommandRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnqueueCommandRequest.ProtoReflect.Descriptor instead.
 func (*EnqueueCommandRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{44}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{55}
 }
 
 func (x *EnqueueCommandRequest) GetCommand() *EncryptedCommand {
@@ -2396,7 +2976,7 @@ type EnqueueCommandResponse struct {
 
 func (x *EnqueueCommandResponse) Reset() {
 	*x = EnqueueCommandResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[45]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[56]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2408,7 +2988,7 @@ func (x *EnqueueCommandResponse) String() string {
 func (*EnqueueCommandResponse) ProtoMessage() {}
 
 func (x *EnqueueCommandResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[45]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[56]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2421,7 +3001,7 @@ func (x *EnqueueCommandResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use EnqueueCommandResponse.ProtoReflect.Descriptor instead.
 func (*EnqueueCommandResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{45}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{56}
 }
 
 func (x *EnqueueCommandResponse) GetCommandId() string {
@@ -2448,7 +3028,7 @@ type GetCommandStatusRequest struct {
 
 func (x *GetCommandStatusRequest) Reset() {
 	*x = GetCommandStatusRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[46]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[57]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2460,7 +3040,7 @@ func (x *GetCommandStatusRequest) String() string {
 func (*GetCommandStatusRequest) ProtoMessage() {}
 
 func (x *GetCommandStatusRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[46]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[57]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2473,7 +3053,7 @@ func (x *GetCommandStatusRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandStatusRequest.ProtoReflect.Descriptor instead.
 func (*GetCommandStatusRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{46}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{57}
 }
 
 func (x *GetCommandStatusRequest) GetDeviceUuid() string {
@@ -2504,7 +3084,7 @@ type GetCommandStatusResponse struct {
 
 func (x *GetCommandStatusResponse) Reset() {
 	*x = GetCommandStatusResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[47]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[58]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2516,7 +3096,7 @@ func (x *GetCommandStatusResponse) String() string {
 func (*GetCommandStatusResponse) ProtoMessage() {}
 
 func (x *GetCommandStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[47]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[58]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2529,7 +3109,7 @@ func (x *GetCommandStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandStatusResponse.ProtoReflect.Descriptor instead.
 func (*GetCommandStatusResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{47}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{58}
 }
 
 func (x *GetCommandStatusResponse) GetCommandId() string {
@@ -2583,7 +3163,7 @@ type GetCommandRecipientRequest struct {
 
 func (x *GetCommandRecipientRequest) Reset() {
 	*x = GetCommandRecipientRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[48]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[59]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2595,7 +3175,7 @@ func (x *GetCommandRecipientRequest) String() string {
 func (*GetCommandRecipientRequest) ProtoMessage() {}
 
 func (x *GetCommandRecipientRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[48]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[59]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2608,7 +3188,7 @@ func (x *GetCommandRecipientRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandRecipientRequest.ProtoReflect.Descriptor instead.
 func (*GetCommandRecipientRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{48}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{59}
 }
 
 func (x *GetCommandRecipientRequest) GetDeviceUuid() string {
@@ -2627,7 +3207,7 @@ type GetCommandRecipientResponse struct {
 
 func (x *GetCommandRecipientResponse) Reset() {
 	*x = GetCommandRecipientResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[49]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[60]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2639,7 +3219,7 @@ func (x *GetCommandRecipientResponse) String() string {
 func (*GetCommandRecipientResponse) ProtoMessage() {}
 
 func (x *GetCommandRecipientResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[49]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[60]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2652,7 +3232,7 @@ func (x *GetCommandRecipientResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetCommandRecipientResponse.ProtoReflect.Descriptor instead.
 func (*GetCommandRecipientResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{49}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{60}
 }
 
 func (x *GetCommandRecipientResponse) GetCommandPublicKey() []byte {
@@ -2670,7 +3250,7 @@ type GetTurnCredentialsRequest struct {
 
 func (x *GetTurnCredentialsRequest) Reset() {
 	*x = GetTurnCredentialsRequest{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[50]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[61]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2682,7 +3262,7 @@ func (x *GetTurnCredentialsRequest) String() string {
 func (*GetTurnCredentialsRequest) ProtoMessage() {}
 
 func (x *GetTurnCredentialsRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[50]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[61]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2695,7 +3275,7 @@ func (x *GetTurnCredentialsRequest) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTurnCredentialsRequest.ProtoReflect.Descriptor instead.
 func (*GetTurnCredentialsRequest) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{50}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{61}
 }
 
 type GetTurnCredentialsResponse struct {
@@ -2710,7 +3290,7 @@ type GetTurnCredentialsResponse struct {
 
 func (x *GetTurnCredentialsResponse) Reset() {
 	*x = GetTurnCredentialsResponse{}
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[51]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[62]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2722,7 +3302,7 @@ func (x *GetTurnCredentialsResponse) String() string {
 func (*GetTurnCredentialsResponse) ProtoMessage() {}
 
 func (x *GetTurnCredentialsResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_relay_communication_v1_owner_proto_msgTypes[51]
+	mi := &file_relay_communication_v1_owner_proto_msgTypes[62]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2735,7 +3315,7 @@ func (x *GetTurnCredentialsResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetTurnCredentialsResponse.ProtoReflect.Descriptor instead.
 func (*GetTurnCredentialsResponse) Descriptor() ([]byte, []int) {
-	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{51}
+	return file_relay_communication_v1_owner_proto_rawDescGZIP(), []int{62}
 }
 
 func (x *GetTurnCredentialsResponse) GetUrls() []string {
@@ -2772,7 +3352,47 @@ const file_relay_communication_v1_owner_proto_rawDesc = "" +
 	"\n" +
 	"\"relay/communication/v1/owner.proto\x12\x16relay.communication.v1\x1a\x1fgoogle/protobuf/timestamp.proto\x1a#relay/communication/v1/device.proto\"\x14\n" +
 	"\x12ListDevicesRequest\"\x15\n" +
-	"\x13ListSimCardsRequest\"-\n" +
+	"\x13ListSimCardsRequest\"0\n" +
+	"\x17ListEsimProfilesRequest\x12\x15\n" +
+	"\x06sim_id\x18\x01 \x01(\tR\x05simId\"\x9c\x01\n" +
+	"\x15AddEsimProfileRequest\x12\x15\n" +
+	"\x06sim_id\x18\x01 \x01(\tR\x05simId\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x02 \x01(\tR\tprofileId\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\x12\x14\n" +
+	"\x05iccid\x18\x04 \x01(\tR\x05iccid\x12#\n" +
+	"\roperator_name\x18\x05 \x01(\tR\foperatorName\"d\n" +
+	"\x18RenameEsimProfileRequest\x12\x15\n" +
+	"\x06sim_id\x18\x01 \x01(\tR\x05simId\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x02 \x01(\tR\tprofileId\x12\x12\n" +
+	"\x04name\x18\x03 \x01(\tR\x04name\"n\n" +
+	"\x1cSetEsimProfileEnabledRequest\x12\x15\n" +
+	"\x06sim_id\x18\x01 \x01(\tR\x05simId\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x02 \x01(\tR\tprofileId\x12\x18\n" +
+	"\aenabled\x18\x03 \x01(\bR\aenabled\"P\n" +
+	"\x18DeleteEsimProfileRequest\x12\x15\n" +
+	"\x06sim_id\x18\x01 \x01(\tR\x05simId\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x02 \x01(\tR\tprofileId\"\x9a\x01\n" +
+	"\vEsimProfile\x12\x1d\n" +
+	"\n" +
+	"profile_id\x18\x01 \x01(\tR\tprofileId\x12\x12\n" +
+	"\x04name\x18\x02 \x01(\tR\x04name\x12\x14\n" +
+	"\x05iccid\x18\x03 \x01(\tR\x05iccid\x12#\n" +
+	"\roperator_name\x18\x04 \x01(\tR\foperatorName\x12\x1d\n" +
+	"\n" +
+	"is_enabled\x18\x05 \x01(\bR\tisEnabled\"[\n" +
+	"\x18ListEsimProfilesResponse\x12?\n" +
+	"\bprofiles\x18\x01 \x03(\v2#.relay.communication.v1.EsimProfileR\bprofiles\"W\n" +
+	"\x16AddEsimProfileResponse\x12=\n" +
+	"\aprofile\x18\x01 \x01(\v2#.relay.communication.v1.EsimProfileR\aprofile\"Z\n" +
+	"\x19RenameEsimProfileResponse\x12=\n" +
+	"\aprofile\x18\x01 \x01(\v2#.relay.communication.v1.EsimProfileR\aprofile\"^\n" +
+	"\x1dSetEsimProfileEnabledResponse\x12=\n" +
+	"\aprofile\x18\x01 \x01(\v2#.relay.communication.v1.EsimProfileR\aprofile\"\x1b\n" +
+	"\x19DeleteEsimProfileResponse\"-\n" +
 	"\x14RetireSimCardRequest\x12\x15\n" +
 	"\x06sim_id\x18\x01 \x01(\tR\x05simId\"\x17\n" +
 	"\x15RetireSimCardResponse\"M\n" +
@@ -2993,10 +3613,15 @@ const file_relay_communication_v1_owner_proto_rawDesc = "" +
 	"credential\x18\x03 \x01(\tR\n" +
 	"credential\x129\n" +
 	"\n" +
-	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt2\xb5\x16\n" +
+	"expires_at\x18\x04 \x01(\v2\x1a.google.protobuf.TimestampR\texpiresAt2\x98\x1b\n" +
 	"\fOwnerService\x12f\n" +
 	"\vListDevices\x12*.relay.communication.v1.ListDevicesRequest\x1a+.relay.communication.v1.ListDevicesResponse\x12i\n" +
-	"\fListSimCards\x12+.relay.communication.v1.ListSimCardsRequest\x1a,.relay.communication.v1.ListSimCardsResponse\x12l\n" +
+	"\fListSimCards\x12+.relay.communication.v1.ListSimCardsRequest\x1a,.relay.communication.v1.ListSimCardsResponse\x12u\n" +
+	"\x10ListEsimProfiles\x12/.relay.communication.v1.ListEsimProfilesRequest\x1a0.relay.communication.v1.ListEsimProfilesResponse\x12o\n" +
+	"\x0eAddEsimProfile\x12-.relay.communication.v1.AddEsimProfileRequest\x1a..relay.communication.v1.AddEsimProfileResponse\x12x\n" +
+	"\x11RenameEsimProfile\x120.relay.communication.v1.RenameEsimProfileRequest\x1a1.relay.communication.v1.RenameEsimProfileResponse\x12\x84\x01\n" +
+	"\x15SetEsimProfileEnabled\x124.relay.communication.v1.SetEsimProfileEnabledRequest\x1a5.relay.communication.v1.SetEsimProfileEnabledResponse\x12x\n" +
+	"\x11DeleteEsimProfile\x120.relay.communication.v1.DeleteEsimProfileRequest\x1a1.relay.communication.v1.DeleteEsimProfileResponse\x12l\n" +
 	"\rRetireSimCard\x12,.relay.communication.v1.RetireSimCardRequest\x1a-.relay.communication.v1.RetireSimCardResponse\x12\x84\x01\n" +
 	"\x15UpdateDeviceNumericId\x124.relay.communication.v1.UpdateDeviceNumericIdRequest\x1a5.relay.communication.v1.UpdateDeviceNumericIdResponse\x12~\n" +
 	"\x13UpdateDeviceProfile\x122.relay.communication.v1.UpdateDeviceProfileRequest\x1a3.relay.communication.v1.UpdateDeviceProfileResponse\x12{\n" +
@@ -3031,144 +3656,169 @@ func file_relay_communication_v1_owner_proto_rawDescGZIP() []byte {
 	return file_relay_communication_v1_owner_proto_rawDescData
 }
 
-var file_relay_communication_v1_owner_proto_msgTypes = make([]protoimpl.MessageInfo, 52)
+var file_relay_communication_v1_owner_proto_msgTypes = make([]protoimpl.MessageInfo, 63)
 var file_relay_communication_v1_owner_proto_goTypes = []any{
 	(*ListDevicesRequest)(nil),                // 0: relay.communication.v1.ListDevicesRequest
 	(*ListSimCardsRequest)(nil),               // 1: relay.communication.v1.ListSimCardsRequest
-	(*RetireSimCardRequest)(nil),              // 2: relay.communication.v1.RetireSimCardRequest
-	(*RetireSimCardResponse)(nil),             // 3: relay.communication.v1.RetireSimCardResponse
-	(*UpdateDeviceNumericIdRequest)(nil),      // 4: relay.communication.v1.UpdateDeviceNumericIdRequest
-	(*UpdateDeviceNumericIdResponse)(nil),     // 5: relay.communication.v1.UpdateDeviceNumericIdResponse
-	(*UpdateDeviceProfileRequest)(nil),        // 6: relay.communication.v1.UpdateDeviceProfileRequest
-	(*UpdateDeviceProfileResponse)(nil),       // 7: relay.communication.v1.UpdateDeviceProfileResponse
-	(*UpdateSimNumericIdRequest)(nil),         // 8: relay.communication.v1.UpdateSimNumericIdRequest
-	(*UpdateSimNumericIdResponse)(nil),        // 9: relay.communication.v1.UpdateSimNumericIdResponse
-	(*UpdateSimProfileRequest)(nil),           // 10: relay.communication.v1.UpdateSimProfileRequest
-	(*UpdateSimProfileResponse)(nil),          // 11: relay.communication.v1.UpdateSimProfileResponse
-	(*RevokeDeviceRequest)(nil),               // 12: relay.communication.v1.RevokeDeviceRequest
-	(*RevokeDeviceResponse)(nil),              // 13: relay.communication.v1.RevokeDeviceResponse
-	(*CreatePairingTokenRequest)(nil),         // 14: relay.communication.v1.CreatePairingTokenRequest
-	(*ListDevicesResponse)(nil),               // 15: relay.communication.v1.ListDevicesResponse
-	(*DeviceRecord)(nil),                      // 16: relay.communication.v1.DeviceRecord
-	(*SlotRecord)(nil),                        // 17: relay.communication.v1.SlotRecord
-	(*ListSimCardsResponse)(nil),              // 18: relay.communication.v1.ListSimCardsResponse
-	(*SimRecord)(nil),                         // 19: relay.communication.v1.SimRecord
-	(*CreatePairingTokenResponse)(nil),        // 20: relay.communication.v1.CreatePairingTokenResponse
-	(*OpenDeviceDiscoveryRequest)(nil),        // 21: relay.communication.v1.OpenDeviceDiscoveryRequest
-	(*OpenDeviceDiscoveryResponse)(nil),       // 22: relay.communication.v1.OpenDeviceDiscoveryResponse
-	(*GetDeviceDiscoverySessionRequest)(nil),  // 23: relay.communication.v1.GetDeviceDiscoverySessionRequest
-	(*GetDeviceDiscoverySessionResponse)(nil), // 24: relay.communication.v1.GetDeviceDiscoverySessionResponse
-	(*CloseDeviceDiscoveryRequest)(nil),       // 25: relay.communication.v1.CloseDeviceDiscoveryRequest
-	(*CloseDeviceDiscoveryResponse)(nil),      // 26: relay.communication.v1.CloseDeviceDiscoveryResponse
-	(*ListDeviceDiscoveriesRequest)(nil),      // 27: relay.communication.v1.ListDeviceDiscoveriesRequest
-	(*DeviceDiscoverySession)(nil),            // 28: relay.communication.v1.DeviceDiscoverySession
-	(*ListDeviceDiscoveriesResponse)(nil),     // 29: relay.communication.v1.ListDeviceDiscoveriesResponse
-	(*ApproveDeviceDiscoveryRequest)(nil),     // 30: relay.communication.v1.ApproveDeviceDiscoveryRequest
-	(*ApproveDeviceDiscoveryResponse)(nil),    // 31: relay.communication.v1.ApproveDeviceDiscoveryResponse
-	(*RejectDeviceDiscoveryRequest)(nil),      // 32: relay.communication.v1.RejectDeviceDiscoveryRequest
-	(*RejectDeviceDiscoveryResponse)(nil),     // 33: relay.communication.v1.RejectDeviceDiscoveryResponse
-	(*OwnerDeviceDiscovery)(nil),              // 34: relay.communication.v1.OwnerDeviceDiscovery
-	(*RegisterAppInstallationRequest)(nil),    // 35: relay.communication.v1.RegisterAppInstallationRequest
-	(*RegisterAppInstallationResponse)(nil),   // 36: relay.communication.v1.RegisterAppInstallationResponse
-	(*AppInstallation)(nil),                   // 37: relay.communication.v1.AppInstallation
-	(*UpsertPushTokenRequest)(nil),            // 38: relay.communication.v1.UpsertPushTokenRequest
-	(*UpsertPushTokenResponse)(nil),           // 39: relay.communication.v1.UpsertPushTokenResponse
-	(*DeletePushTokenRequest)(nil),            // 40: relay.communication.v1.DeletePushTokenRequest
-	(*DeletePushTokenResponse)(nil),           // 41: relay.communication.v1.DeletePushTokenResponse
-	(*ClaimIncomingCallRequest)(nil),          // 42: relay.communication.v1.ClaimIncomingCallRequest
-	(*ClaimIncomingCallResponse)(nil),         // 43: relay.communication.v1.ClaimIncomingCallResponse
-	(*EnqueueCommandRequest)(nil),             // 44: relay.communication.v1.EnqueueCommandRequest
-	(*EnqueueCommandResponse)(nil),            // 45: relay.communication.v1.EnqueueCommandResponse
-	(*GetCommandStatusRequest)(nil),           // 46: relay.communication.v1.GetCommandStatusRequest
-	(*GetCommandStatusResponse)(nil),          // 47: relay.communication.v1.GetCommandStatusResponse
-	(*GetCommandRecipientRequest)(nil),        // 48: relay.communication.v1.GetCommandRecipientRequest
-	(*GetCommandRecipientResponse)(nil),       // 49: relay.communication.v1.GetCommandRecipientResponse
-	(*GetTurnCredentialsRequest)(nil),         // 50: relay.communication.v1.GetTurnCredentialsRequest
-	(*GetTurnCredentialsResponse)(nil),        // 51: relay.communication.v1.GetTurnCredentialsResponse
-	(*timestamppb.Timestamp)(nil),             // 52: google.protobuf.Timestamp
-	(*EncryptedCommand)(nil),                  // 53: relay.communication.v1.EncryptedCommand
+	(*ListEsimProfilesRequest)(nil),           // 2: relay.communication.v1.ListEsimProfilesRequest
+	(*AddEsimProfileRequest)(nil),             // 3: relay.communication.v1.AddEsimProfileRequest
+	(*RenameEsimProfileRequest)(nil),          // 4: relay.communication.v1.RenameEsimProfileRequest
+	(*SetEsimProfileEnabledRequest)(nil),      // 5: relay.communication.v1.SetEsimProfileEnabledRequest
+	(*DeleteEsimProfileRequest)(nil),          // 6: relay.communication.v1.DeleteEsimProfileRequest
+	(*EsimProfile)(nil),                       // 7: relay.communication.v1.EsimProfile
+	(*ListEsimProfilesResponse)(nil),          // 8: relay.communication.v1.ListEsimProfilesResponse
+	(*AddEsimProfileResponse)(nil),            // 9: relay.communication.v1.AddEsimProfileResponse
+	(*RenameEsimProfileResponse)(nil),         // 10: relay.communication.v1.RenameEsimProfileResponse
+	(*SetEsimProfileEnabledResponse)(nil),     // 11: relay.communication.v1.SetEsimProfileEnabledResponse
+	(*DeleteEsimProfileResponse)(nil),         // 12: relay.communication.v1.DeleteEsimProfileResponse
+	(*RetireSimCardRequest)(nil),              // 13: relay.communication.v1.RetireSimCardRequest
+	(*RetireSimCardResponse)(nil),             // 14: relay.communication.v1.RetireSimCardResponse
+	(*UpdateDeviceNumericIdRequest)(nil),      // 15: relay.communication.v1.UpdateDeviceNumericIdRequest
+	(*UpdateDeviceNumericIdResponse)(nil),     // 16: relay.communication.v1.UpdateDeviceNumericIdResponse
+	(*UpdateDeviceProfileRequest)(nil),        // 17: relay.communication.v1.UpdateDeviceProfileRequest
+	(*UpdateDeviceProfileResponse)(nil),       // 18: relay.communication.v1.UpdateDeviceProfileResponse
+	(*UpdateSimNumericIdRequest)(nil),         // 19: relay.communication.v1.UpdateSimNumericIdRequest
+	(*UpdateSimNumericIdResponse)(nil),        // 20: relay.communication.v1.UpdateSimNumericIdResponse
+	(*UpdateSimProfileRequest)(nil),           // 21: relay.communication.v1.UpdateSimProfileRequest
+	(*UpdateSimProfileResponse)(nil),          // 22: relay.communication.v1.UpdateSimProfileResponse
+	(*RevokeDeviceRequest)(nil),               // 23: relay.communication.v1.RevokeDeviceRequest
+	(*RevokeDeviceResponse)(nil),              // 24: relay.communication.v1.RevokeDeviceResponse
+	(*CreatePairingTokenRequest)(nil),         // 25: relay.communication.v1.CreatePairingTokenRequest
+	(*ListDevicesResponse)(nil),               // 26: relay.communication.v1.ListDevicesResponse
+	(*DeviceRecord)(nil),                      // 27: relay.communication.v1.DeviceRecord
+	(*SlotRecord)(nil),                        // 28: relay.communication.v1.SlotRecord
+	(*ListSimCardsResponse)(nil),              // 29: relay.communication.v1.ListSimCardsResponse
+	(*SimRecord)(nil),                         // 30: relay.communication.v1.SimRecord
+	(*CreatePairingTokenResponse)(nil),        // 31: relay.communication.v1.CreatePairingTokenResponse
+	(*OpenDeviceDiscoveryRequest)(nil),        // 32: relay.communication.v1.OpenDeviceDiscoveryRequest
+	(*OpenDeviceDiscoveryResponse)(nil),       // 33: relay.communication.v1.OpenDeviceDiscoveryResponse
+	(*GetDeviceDiscoverySessionRequest)(nil),  // 34: relay.communication.v1.GetDeviceDiscoverySessionRequest
+	(*GetDeviceDiscoverySessionResponse)(nil), // 35: relay.communication.v1.GetDeviceDiscoverySessionResponse
+	(*CloseDeviceDiscoveryRequest)(nil),       // 36: relay.communication.v1.CloseDeviceDiscoveryRequest
+	(*CloseDeviceDiscoveryResponse)(nil),      // 37: relay.communication.v1.CloseDeviceDiscoveryResponse
+	(*ListDeviceDiscoveriesRequest)(nil),      // 38: relay.communication.v1.ListDeviceDiscoveriesRequest
+	(*DeviceDiscoverySession)(nil),            // 39: relay.communication.v1.DeviceDiscoverySession
+	(*ListDeviceDiscoveriesResponse)(nil),     // 40: relay.communication.v1.ListDeviceDiscoveriesResponse
+	(*ApproveDeviceDiscoveryRequest)(nil),     // 41: relay.communication.v1.ApproveDeviceDiscoveryRequest
+	(*ApproveDeviceDiscoveryResponse)(nil),    // 42: relay.communication.v1.ApproveDeviceDiscoveryResponse
+	(*RejectDeviceDiscoveryRequest)(nil),      // 43: relay.communication.v1.RejectDeviceDiscoveryRequest
+	(*RejectDeviceDiscoveryResponse)(nil),     // 44: relay.communication.v1.RejectDeviceDiscoveryResponse
+	(*OwnerDeviceDiscovery)(nil),              // 45: relay.communication.v1.OwnerDeviceDiscovery
+	(*RegisterAppInstallationRequest)(nil),    // 46: relay.communication.v1.RegisterAppInstallationRequest
+	(*RegisterAppInstallationResponse)(nil),   // 47: relay.communication.v1.RegisterAppInstallationResponse
+	(*AppInstallation)(nil),                   // 48: relay.communication.v1.AppInstallation
+	(*UpsertPushTokenRequest)(nil),            // 49: relay.communication.v1.UpsertPushTokenRequest
+	(*UpsertPushTokenResponse)(nil),           // 50: relay.communication.v1.UpsertPushTokenResponse
+	(*DeletePushTokenRequest)(nil),            // 51: relay.communication.v1.DeletePushTokenRequest
+	(*DeletePushTokenResponse)(nil),           // 52: relay.communication.v1.DeletePushTokenResponse
+	(*ClaimIncomingCallRequest)(nil),          // 53: relay.communication.v1.ClaimIncomingCallRequest
+	(*ClaimIncomingCallResponse)(nil),         // 54: relay.communication.v1.ClaimIncomingCallResponse
+	(*EnqueueCommandRequest)(nil),             // 55: relay.communication.v1.EnqueueCommandRequest
+	(*EnqueueCommandResponse)(nil),            // 56: relay.communication.v1.EnqueueCommandResponse
+	(*GetCommandStatusRequest)(nil),           // 57: relay.communication.v1.GetCommandStatusRequest
+	(*GetCommandStatusResponse)(nil),          // 58: relay.communication.v1.GetCommandStatusResponse
+	(*GetCommandRecipientRequest)(nil),        // 59: relay.communication.v1.GetCommandRecipientRequest
+	(*GetCommandRecipientResponse)(nil),       // 60: relay.communication.v1.GetCommandRecipientResponse
+	(*GetTurnCredentialsRequest)(nil),         // 61: relay.communication.v1.GetTurnCredentialsRequest
+	(*GetTurnCredentialsResponse)(nil),        // 62: relay.communication.v1.GetTurnCredentialsResponse
+	(*timestamppb.Timestamp)(nil),             // 63: google.protobuf.Timestamp
+	(*EncryptedCommand)(nil),                  // 64: relay.communication.v1.EncryptedCommand
 }
 var file_relay_communication_v1_owner_proto_depIdxs = []int32{
-	16, // 0: relay.communication.v1.ListDevicesResponse.devices:type_name -> relay.communication.v1.DeviceRecord
-	52, // 1: relay.communication.v1.DeviceRecord.paired_at:type_name -> google.protobuf.Timestamp
-	52, // 2: relay.communication.v1.DeviceRecord.last_seen_at:type_name -> google.protobuf.Timestamp
-	52, // 3: relay.communication.v1.DeviceRecord.radio_status_updated_at:type_name -> google.protobuf.Timestamp
-	17, // 4: relay.communication.v1.DeviceRecord.slots:type_name -> relay.communication.v1.SlotRecord
-	52, // 5: relay.communication.v1.SlotRecord.last_seen_at:type_name -> google.protobuf.Timestamp
-	52, // 6: relay.communication.v1.SlotRecord.radio_status_updated_at:type_name -> google.protobuf.Timestamp
-	19, // 7: relay.communication.v1.ListSimCardsResponse.sims:type_name -> relay.communication.v1.SimRecord
-	52, // 8: relay.communication.v1.SimRecord.first_seen_at:type_name -> google.protobuf.Timestamp
-	52, // 9: relay.communication.v1.SimRecord.last_seen_at:type_name -> google.protobuf.Timestamp
-	52, // 10: relay.communication.v1.CreatePairingTokenResponse.expires_at:type_name -> google.protobuf.Timestamp
-	28, // 11: relay.communication.v1.OpenDeviceDiscoveryResponse.session:type_name -> relay.communication.v1.DeviceDiscoverySession
-	28, // 12: relay.communication.v1.GetDeviceDiscoverySessionResponse.session:type_name -> relay.communication.v1.DeviceDiscoverySession
-	52, // 13: relay.communication.v1.DeviceDiscoverySession.opened_at:type_name -> google.protobuf.Timestamp
-	52, // 14: relay.communication.v1.DeviceDiscoverySession.expires_at:type_name -> google.protobuf.Timestamp
-	52, // 15: relay.communication.v1.DeviceDiscoverySession.closed_at:type_name -> google.protobuf.Timestamp
-	34, // 16: relay.communication.v1.ListDeviceDiscoveriesResponse.discoveries:type_name -> relay.communication.v1.OwnerDeviceDiscovery
-	34, // 17: relay.communication.v1.ApproveDeviceDiscoveryResponse.device:type_name -> relay.communication.v1.OwnerDeviceDiscovery
-	52, // 18: relay.communication.v1.OwnerDeviceDiscovery.first_seen_at:type_name -> google.protobuf.Timestamp
-	52, // 19: relay.communication.v1.OwnerDeviceDiscovery.last_seen_at:type_name -> google.protobuf.Timestamp
-	52, // 20: relay.communication.v1.OwnerDeviceDiscovery.expires_at:type_name -> google.protobuf.Timestamp
-	37, // 21: relay.communication.v1.RegisterAppInstallationResponse.installation:type_name -> relay.communication.v1.AppInstallation
-	52, // 22: relay.communication.v1.AppInstallation.approved_at:type_name -> google.protobuf.Timestamp
-	52, // 23: relay.communication.v1.AppInstallation.revoked_at:type_name -> google.protobuf.Timestamp
-	52, // 24: relay.communication.v1.AppInstallation.created_at:type_name -> google.protobuf.Timestamp
-	52, // 25: relay.communication.v1.ClaimIncomingCallResponse.claimed_at:type_name -> google.protobuf.Timestamp
-	53, // 26: relay.communication.v1.EnqueueCommandRequest.command:type_name -> relay.communication.v1.EncryptedCommand
-	52, // 27: relay.communication.v1.GetCommandStatusResponse.completed_at:type_name -> google.protobuf.Timestamp
-	52, // 28: relay.communication.v1.GetTurnCredentialsResponse.expires_at:type_name -> google.protobuf.Timestamp
-	0,  // 29: relay.communication.v1.OwnerService.ListDevices:input_type -> relay.communication.v1.ListDevicesRequest
-	1,  // 30: relay.communication.v1.OwnerService.ListSimCards:input_type -> relay.communication.v1.ListSimCardsRequest
-	2,  // 31: relay.communication.v1.OwnerService.RetireSimCard:input_type -> relay.communication.v1.RetireSimCardRequest
-	4,  // 32: relay.communication.v1.OwnerService.UpdateDeviceNumericId:input_type -> relay.communication.v1.UpdateDeviceNumericIdRequest
-	6,  // 33: relay.communication.v1.OwnerService.UpdateDeviceProfile:input_type -> relay.communication.v1.UpdateDeviceProfileRequest
-	8,  // 34: relay.communication.v1.OwnerService.UpdateSimNumericId:input_type -> relay.communication.v1.UpdateSimNumericIdRequest
-	10, // 35: relay.communication.v1.OwnerService.UpdateSimProfile:input_type -> relay.communication.v1.UpdateSimProfileRequest
-	12, // 36: relay.communication.v1.OwnerService.RevokeDevice:input_type -> relay.communication.v1.RevokeDeviceRequest
-	14, // 37: relay.communication.v1.OwnerService.CreatePairingToken:input_type -> relay.communication.v1.CreatePairingTokenRequest
-	21, // 38: relay.communication.v1.OwnerService.OpenDeviceDiscovery:input_type -> relay.communication.v1.OpenDeviceDiscoveryRequest
-	23, // 39: relay.communication.v1.OwnerService.GetDeviceDiscoverySession:input_type -> relay.communication.v1.GetDeviceDiscoverySessionRequest
-	25, // 40: relay.communication.v1.OwnerService.CloseDeviceDiscovery:input_type -> relay.communication.v1.CloseDeviceDiscoveryRequest
-	27, // 41: relay.communication.v1.OwnerService.ListDeviceDiscoveries:input_type -> relay.communication.v1.ListDeviceDiscoveriesRequest
-	30, // 42: relay.communication.v1.OwnerService.ApproveDeviceDiscovery:input_type -> relay.communication.v1.ApproveDeviceDiscoveryRequest
-	32, // 43: relay.communication.v1.OwnerService.RejectDeviceDiscovery:input_type -> relay.communication.v1.RejectDeviceDiscoveryRequest
-	35, // 44: relay.communication.v1.OwnerService.RegisterAppInstallation:input_type -> relay.communication.v1.RegisterAppInstallationRequest
-	38, // 45: relay.communication.v1.OwnerService.UpsertPushToken:input_type -> relay.communication.v1.UpsertPushTokenRequest
-	40, // 46: relay.communication.v1.OwnerService.DeletePushToken:input_type -> relay.communication.v1.DeletePushTokenRequest
-	42, // 47: relay.communication.v1.OwnerService.ClaimIncomingCall:input_type -> relay.communication.v1.ClaimIncomingCallRequest
-	44, // 48: relay.communication.v1.OwnerService.EnqueueCommand:input_type -> relay.communication.v1.EnqueueCommandRequest
-	46, // 49: relay.communication.v1.OwnerService.GetCommandStatus:input_type -> relay.communication.v1.GetCommandStatusRequest
-	48, // 50: relay.communication.v1.OwnerService.GetCommandRecipient:input_type -> relay.communication.v1.GetCommandRecipientRequest
-	50, // 51: relay.communication.v1.OwnerService.GetTurnCredentials:input_type -> relay.communication.v1.GetTurnCredentialsRequest
-	15, // 52: relay.communication.v1.OwnerService.ListDevices:output_type -> relay.communication.v1.ListDevicesResponse
-	18, // 53: relay.communication.v1.OwnerService.ListSimCards:output_type -> relay.communication.v1.ListSimCardsResponse
-	3,  // 54: relay.communication.v1.OwnerService.RetireSimCard:output_type -> relay.communication.v1.RetireSimCardResponse
-	5,  // 55: relay.communication.v1.OwnerService.UpdateDeviceNumericId:output_type -> relay.communication.v1.UpdateDeviceNumericIdResponse
-	7,  // 56: relay.communication.v1.OwnerService.UpdateDeviceProfile:output_type -> relay.communication.v1.UpdateDeviceProfileResponse
-	9,  // 57: relay.communication.v1.OwnerService.UpdateSimNumericId:output_type -> relay.communication.v1.UpdateSimNumericIdResponse
-	11, // 58: relay.communication.v1.OwnerService.UpdateSimProfile:output_type -> relay.communication.v1.UpdateSimProfileResponse
-	13, // 59: relay.communication.v1.OwnerService.RevokeDevice:output_type -> relay.communication.v1.RevokeDeviceResponse
-	20, // 60: relay.communication.v1.OwnerService.CreatePairingToken:output_type -> relay.communication.v1.CreatePairingTokenResponse
-	22, // 61: relay.communication.v1.OwnerService.OpenDeviceDiscovery:output_type -> relay.communication.v1.OpenDeviceDiscoveryResponse
-	24, // 62: relay.communication.v1.OwnerService.GetDeviceDiscoverySession:output_type -> relay.communication.v1.GetDeviceDiscoverySessionResponse
-	26, // 63: relay.communication.v1.OwnerService.CloseDeviceDiscovery:output_type -> relay.communication.v1.CloseDeviceDiscoveryResponse
-	29, // 64: relay.communication.v1.OwnerService.ListDeviceDiscoveries:output_type -> relay.communication.v1.ListDeviceDiscoveriesResponse
-	31, // 65: relay.communication.v1.OwnerService.ApproveDeviceDiscovery:output_type -> relay.communication.v1.ApproveDeviceDiscoveryResponse
-	33, // 66: relay.communication.v1.OwnerService.RejectDeviceDiscovery:output_type -> relay.communication.v1.RejectDeviceDiscoveryResponse
-	36, // 67: relay.communication.v1.OwnerService.RegisterAppInstallation:output_type -> relay.communication.v1.RegisterAppInstallationResponse
-	39, // 68: relay.communication.v1.OwnerService.UpsertPushToken:output_type -> relay.communication.v1.UpsertPushTokenResponse
-	41, // 69: relay.communication.v1.OwnerService.DeletePushToken:output_type -> relay.communication.v1.DeletePushTokenResponse
-	43, // 70: relay.communication.v1.OwnerService.ClaimIncomingCall:output_type -> relay.communication.v1.ClaimIncomingCallResponse
-	45, // 71: relay.communication.v1.OwnerService.EnqueueCommand:output_type -> relay.communication.v1.EnqueueCommandResponse
-	47, // 72: relay.communication.v1.OwnerService.GetCommandStatus:output_type -> relay.communication.v1.GetCommandStatusResponse
-	49, // 73: relay.communication.v1.OwnerService.GetCommandRecipient:output_type -> relay.communication.v1.GetCommandRecipientResponse
-	51, // 74: relay.communication.v1.OwnerService.GetTurnCredentials:output_type -> relay.communication.v1.GetTurnCredentialsResponse
-	52, // [52:75] is the sub-list for method output_type
-	29, // [29:52] is the sub-list for method input_type
-	29, // [29:29] is the sub-list for extension type_name
-	29, // [29:29] is the sub-list for extension extendee
-	0,  // [0:29] is the sub-list for field type_name
+	7,  // 0: relay.communication.v1.ListEsimProfilesResponse.profiles:type_name -> relay.communication.v1.EsimProfile
+	7,  // 1: relay.communication.v1.AddEsimProfileResponse.profile:type_name -> relay.communication.v1.EsimProfile
+	7,  // 2: relay.communication.v1.RenameEsimProfileResponse.profile:type_name -> relay.communication.v1.EsimProfile
+	7,  // 3: relay.communication.v1.SetEsimProfileEnabledResponse.profile:type_name -> relay.communication.v1.EsimProfile
+	27, // 4: relay.communication.v1.ListDevicesResponse.devices:type_name -> relay.communication.v1.DeviceRecord
+	63, // 5: relay.communication.v1.DeviceRecord.paired_at:type_name -> google.protobuf.Timestamp
+	63, // 6: relay.communication.v1.DeviceRecord.last_seen_at:type_name -> google.protobuf.Timestamp
+	63, // 7: relay.communication.v1.DeviceRecord.radio_status_updated_at:type_name -> google.protobuf.Timestamp
+	28, // 8: relay.communication.v1.DeviceRecord.slots:type_name -> relay.communication.v1.SlotRecord
+	63, // 9: relay.communication.v1.SlotRecord.last_seen_at:type_name -> google.protobuf.Timestamp
+	63, // 10: relay.communication.v1.SlotRecord.radio_status_updated_at:type_name -> google.protobuf.Timestamp
+	30, // 11: relay.communication.v1.ListSimCardsResponse.sims:type_name -> relay.communication.v1.SimRecord
+	63, // 12: relay.communication.v1.SimRecord.first_seen_at:type_name -> google.protobuf.Timestamp
+	63, // 13: relay.communication.v1.SimRecord.last_seen_at:type_name -> google.protobuf.Timestamp
+	63, // 14: relay.communication.v1.CreatePairingTokenResponse.expires_at:type_name -> google.protobuf.Timestamp
+	39, // 15: relay.communication.v1.OpenDeviceDiscoveryResponse.session:type_name -> relay.communication.v1.DeviceDiscoverySession
+	39, // 16: relay.communication.v1.GetDeviceDiscoverySessionResponse.session:type_name -> relay.communication.v1.DeviceDiscoverySession
+	63, // 17: relay.communication.v1.DeviceDiscoverySession.opened_at:type_name -> google.protobuf.Timestamp
+	63, // 18: relay.communication.v1.DeviceDiscoverySession.expires_at:type_name -> google.protobuf.Timestamp
+	63, // 19: relay.communication.v1.DeviceDiscoverySession.closed_at:type_name -> google.protobuf.Timestamp
+	45, // 20: relay.communication.v1.ListDeviceDiscoveriesResponse.discoveries:type_name -> relay.communication.v1.OwnerDeviceDiscovery
+	45, // 21: relay.communication.v1.ApproveDeviceDiscoveryResponse.device:type_name -> relay.communication.v1.OwnerDeviceDiscovery
+	63, // 22: relay.communication.v1.OwnerDeviceDiscovery.first_seen_at:type_name -> google.protobuf.Timestamp
+	63, // 23: relay.communication.v1.OwnerDeviceDiscovery.last_seen_at:type_name -> google.protobuf.Timestamp
+	63, // 24: relay.communication.v1.OwnerDeviceDiscovery.expires_at:type_name -> google.protobuf.Timestamp
+	48, // 25: relay.communication.v1.RegisterAppInstallationResponse.installation:type_name -> relay.communication.v1.AppInstallation
+	63, // 26: relay.communication.v1.AppInstallation.approved_at:type_name -> google.protobuf.Timestamp
+	63, // 27: relay.communication.v1.AppInstallation.revoked_at:type_name -> google.protobuf.Timestamp
+	63, // 28: relay.communication.v1.AppInstallation.created_at:type_name -> google.protobuf.Timestamp
+	63, // 29: relay.communication.v1.ClaimIncomingCallResponse.claimed_at:type_name -> google.protobuf.Timestamp
+	64, // 30: relay.communication.v1.EnqueueCommandRequest.command:type_name -> relay.communication.v1.EncryptedCommand
+	63, // 31: relay.communication.v1.GetCommandStatusResponse.completed_at:type_name -> google.protobuf.Timestamp
+	63, // 32: relay.communication.v1.GetTurnCredentialsResponse.expires_at:type_name -> google.protobuf.Timestamp
+	0,  // 33: relay.communication.v1.OwnerService.ListDevices:input_type -> relay.communication.v1.ListDevicesRequest
+	1,  // 34: relay.communication.v1.OwnerService.ListSimCards:input_type -> relay.communication.v1.ListSimCardsRequest
+	2,  // 35: relay.communication.v1.OwnerService.ListEsimProfiles:input_type -> relay.communication.v1.ListEsimProfilesRequest
+	3,  // 36: relay.communication.v1.OwnerService.AddEsimProfile:input_type -> relay.communication.v1.AddEsimProfileRequest
+	4,  // 37: relay.communication.v1.OwnerService.RenameEsimProfile:input_type -> relay.communication.v1.RenameEsimProfileRequest
+	5,  // 38: relay.communication.v1.OwnerService.SetEsimProfileEnabled:input_type -> relay.communication.v1.SetEsimProfileEnabledRequest
+	6,  // 39: relay.communication.v1.OwnerService.DeleteEsimProfile:input_type -> relay.communication.v1.DeleteEsimProfileRequest
+	13, // 40: relay.communication.v1.OwnerService.RetireSimCard:input_type -> relay.communication.v1.RetireSimCardRequest
+	15, // 41: relay.communication.v1.OwnerService.UpdateDeviceNumericId:input_type -> relay.communication.v1.UpdateDeviceNumericIdRequest
+	17, // 42: relay.communication.v1.OwnerService.UpdateDeviceProfile:input_type -> relay.communication.v1.UpdateDeviceProfileRequest
+	19, // 43: relay.communication.v1.OwnerService.UpdateSimNumericId:input_type -> relay.communication.v1.UpdateSimNumericIdRequest
+	21, // 44: relay.communication.v1.OwnerService.UpdateSimProfile:input_type -> relay.communication.v1.UpdateSimProfileRequest
+	23, // 45: relay.communication.v1.OwnerService.RevokeDevice:input_type -> relay.communication.v1.RevokeDeviceRequest
+	25, // 46: relay.communication.v1.OwnerService.CreatePairingToken:input_type -> relay.communication.v1.CreatePairingTokenRequest
+	32, // 47: relay.communication.v1.OwnerService.OpenDeviceDiscovery:input_type -> relay.communication.v1.OpenDeviceDiscoveryRequest
+	34, // 48: relay.communication.v1.OwnerService.GetDeviceDiscoverySession:input_type -> relay.communication.v1.GetDeviceDiscoverySessionRequest
+	36, // 49: relay.communication.v1.OwnerService.CloseDeviceDiscovery:input_type -> relay.communication.v1.CloseDeviceDiscoveryRequest
+	38, // 50: relay.communication.v1.OwnerService.ListDeviceDiscoveries:input_type -> relay.communication.v1.ListDeviceDiscoveriesRequest
+	41, // 51: relay.communication.v1.OwnerService.ApproveDeviceDiscovery:input_type -> relay.communication.v1.ApproveDeviceDiscoveryRequest
+	43, // 52: relay.communication.v1.OwnerService.RejectDeviceDiscovery:input_type -> relay.communication.v1.RejectDeviceDiscoveryRequest
+	46, // 53: relay.communication.v1.OwnerService.RegisterAppInstallation:input_type -> relay.communication.v1.RegisterAppInstallationRequest
+	49, // 54: relay.communication.v1.OwnerService.UpsertPushToken:input_type -> relay.communication.v1.UpsertPushTokenRequest
+	51, // 55: relay.communication.v1.OwnerService.DeletePushToken:input_type -> relay.communication.v1.DeletePushTokenRequest
+	53, // 56: relay.communication.v1.OwnerService.ClaimIncomingCall:input_type -> relay.communication.v1.ClaimIncomingCallRequest
+	55, // 57: relay.communication.v1.OwnerService.EnqueueCommand:input_type -> relay.communication.v1.EnqueueCommandRequest
+	57, // 58: relay.communication.v1.OwnerService.GetCommandStatus:input_type -> relay.communication.v1.GetCommandStatusRequest
+	59, // 59: relay.communication.v1.OwnerService.GetCommandRecipient:input_type -> relay.communication.v1.GetCommandRecipientRequest
+	61, // 60: relay.communication.v1.OwnerService.GetTurnCredentials:input_type -> relay.communication.v1.GetTurnCredentialsRequest
+	26, // 61: relay.communication.v1.OwnerService.ListDevices:output_type -> relay.communication.v1.ListDevicesResponse
+	29, // 62: relay.communication.v1.OwnerService.ListSimCards:output_type -> relay.communication.v1.ListSimCardsResponse
+	8,  // 63: relay.communication.v1.OwnerService.ListEsimProfiles:output_type -> relay.communication.v1.ListEsimProfilesResponse
+	9,  // 64: relay.communication.v1.OwnerService.AddEsimProfile:output_type -> relay.communication.v1.AddEsimProfileResponse
+	10, // 65: relay.communication.v1.OwnerService.RenameEsimProfile:output_type -> relay.communication.v1.RenameEsimProfileResponse
+	11, // 66: relay.communication.v1.OwnerService.SetEsimProfileEnabled:output_type -> relay.communication.v1.SetEsimProfileEnabledResponse
+	12, // 67: relay.communication.v1.OwnerService.DeleteEsimProfile:output_type -> relay.communication.v1.DeleteEsimProfileResponse
+	14, // 68: relay.communication.v1.OwnerService.RetireSimCard:output_type -> relay.communication.v1.RetireSimCardResponse
+	16, // 69: relay.communication.v1.OwnerService.UpdateDeviceNumericId:output_type -> relay.communication.v1.UpdateDeviceNumericIdResponse
+	18, // 70: relay.communication.v1.OwnerService.UpdateDeviceProfile:output_type -> relay.communication.v1.UpdateDeviceProfileResponse
+	20, // 71: relay.communication.v1.OwnerService.UpdateSimNumericId:output_type -> relay.communication.v1.UpdateSimNumericIdResponse
+	22, // 72: relay.communication.v1.OwnerService.UpdateSimProfile:output_type -> relay.communication.v1.UpdateSimProfileResponse
+	24, // 73: relay.communication.v1.OwnerService.RevokeDevice:output_type -> relay.communication.v1.RevokeDeviceResponse
+	31, // 74: relay.communication.v1.OwnerService.CreatePairingToken:output_type -> relay.communication.v1.CreatePairingTokenResponse
+	33, // 75: relay.communication.v1.OwnerService.OpenDeviceDiscovery:output_type -> relay.communication.v1.OpenDeviceDiscoveryResponse
+	35, // 76: relay.communication.v1.OwnerService.GetDeviceDiscoverySession:output_type -> relay.communication.v1.GetDeviceDiscoverySessionResponse
+	37, // 77: relay.communication.v1.OwnerService.CloseDeviceDiscovery:output_type -> relay.communication.v1.CloseDeviceDiscoveryResponse
+	40, // 78: relay.communication.v1.OwnerService.ListDeviceDiscoveries:output_type -> relay.communication.v1.ListDeviceDiscoveriesResponse
+	42, // 79: relay.communication.v1.OwnerService.ApproveDeviceDiscovery:output_type -> relay.communication.v1.ApproveDeviceDiscoveryResponse
+	44, // 80: relay.communication.v1.OwnerService.RejectDeviceDiscovery:output_type -> relay.communication.v1.RejectDeviceDiscoveryResponse
+	47, // 81: relay.communication.v1.OwnerService.RegisterAppInstallation:output_type -> relay.communication.v1.RegisterAppInstallationResponse
+	50, // 82: relay.communication.v1.OwnerService.UpsertPushToken:output_type -> relay.communication.v1.UpsertPushTokenResponse
+	52, // 83: relay.communication.v1.OwnerService.DeletePushToken:output_type -> relay.communication.v1.DeletePushTokenResponse
+	54, // 84: relay.communication.v1.OwnerService.ClaimIncomingCall:output_type -> relay.communication.v1.ClaimIncomingCallResponse
+	56, // 85: relay.communication.v1.OwnerService.EnqueueCommand:output_type -> relay.communication.v1.EnqueueCommandResponse
+	58, // 86: relay.communication.v1.OwnerService.GetCommandStatus:output_type -> relay.communication.v1.GetCommandStatusResponse
+	60, // 87: relay.communication.v1.OwnerService.GetCommandRecipient:output_type -> relay.communication.v1.GetCommandRecipientResponse
+	62, // 88: relay.communication.v1.OwnerService.GetTurnCredentials:output_type -> relay.communication.v1.GetTurnCredentialsResponse
+	61, // [61:89] is the sub-list for method output_type
+	33, // [33:61] is the sub-list for method input_type
+	33, // [33:33] is the sub-list for extension type_name
+	33, // [33:33] is the sub-list for extension extendee
+	0,  // [0:33] is the sub-list for field type_name
 }
 
 func init() { file_relay_communication_v1_owner_proto_init() }
@@ -3177,22 +3827,22 @@ func file_relay_communication_v1_owner_proto_init() {
 		return
 	}
 	file_relay_communication_v1_device_proto_init()
-	file_relay_communication_v1_owner_proto_msgTypes[16].OneofWrappers = []any{}
-	file_relay_communication_v1_owner_proto_msgTypes[17].OneofWrappers = []any{}
-	file_relay_communication_v1_owner_proto_msgTypes[19].OneofWrappers = []any{}
-	file_relay_communication_v1_owner_proto_msgTypes[22].OneofWrappers = []any{}
-	file_relay_communication_v1_owner_proto_msgTypes[24].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[27].OneofWrappers = []any{}
 	file_relay_communication_v1_owner_proto_msgTypes[28].OneofWrappers = []any{}
-	file_relay_communication_v1_owner_proto_msgTypes[34].OneofWrappers = []any{}
-	file_relay_communication_v1_owner_proto_msgTypes[37].OneofWrappers = []any{}
-	file_relay_communication_v1_owner_proto_msgTypes[47].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[30].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[33].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[35].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[39].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[45].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[48].OneofWrappers = []any{}
+	file_relay_communication_v1_owner_proto_msgTypes[58].OneofWrappers = []any{}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_relay_communication_v1_owner_proto_rawDesc), len(file_relay_communication_v1_owner_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   52,
+			NumMessages:   63,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

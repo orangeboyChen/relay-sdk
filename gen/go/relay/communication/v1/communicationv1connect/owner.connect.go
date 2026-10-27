@@ -28,6 +28,21 @@ const (
 	OwnerServiceListDevicesProcedure = "/relay.communication.v1.OwnerService/ListDevices"
 	// OwnerServiceListSimCardsProcedure is the procedure name of the OwnerService's ListSimCards RPC.
 	OwnerServiceListSimCardsProcedure = "/relay.communication.v1.OwnerService/ListSimCards"
+	// OwnerServiceListEsimProfilesProcedure is the procedure name of the OwnerService's
+	// ListEsimProfiles RPC.
+	OwnerServiceListEsimProfilesProcedure = "/relay.communication.v1.OwnerService/ListEsimProfiles"
+	// OwnerServiceAddEsimProfileProcedure is the procedure name of the OwnerService's AddEsimProfile
+	// RPC.
+	OwnerServiceAddEsimProfileProcedure = "/relay.communication.v1.OwnerService/AddEsimProfile"
+	// OwnerServiceRenameEsimProfileProcedure is the procedure name of the OwnerService's
+	// RenameEsimProfile RPC.
+	OwnerServiceRenameEsimProfileProcedure = "/relay.communication.v1.OwnerService/RenameEsimProfile"
+	// OwnerServiceSetEsimProfileEnabledProcedure is the procedure name of the OwnerService's
+	// SetEsimProfileEnabled RPC.
+	OwnerServiceSetEsimProfileEnabledProcedure = "/relay.communication.v1.OwnerService/SetEsimProfileEnabled"
+	// OwnerServiceDeleteEsimProfileProcedure is the procedure name of the OwnerService's
+	// DeleteEsimProfile RPC.
+	OwnerServiceDeleteEsimProfileProcedure = "/relay.communication.v1.OwnerService/DeleteEsimProfile"
 	// OwnerServiceRetireSimCardProcedure is the procedure name of the OwnerService's RetireSimCard RPC.
 	OwnerServiceRetireSimCardProcedure = "/relay.communication.v1.OwnerService/RetireSimCard"
 	// OwnerServiceUpdateDeviceNumericIdProcedure is the procedure name of the OwnerService's
@@ -104,6 +119,41 @@ var (
 			StreamType: connect.StreamTypeUnary,
 			Schema:     v1.File_relay_communication_v1_owner_proto.Services().ByName("OwnerService").Methods().ByName("ListSimCards"),
 			Procedure:  OwnerServiceListSimCardsProcedure,
+		}
+	})
+	ownerServiceListEsimProfilesSpec = sync.OnceValue(func() connect.Spec {
+		return connect.Spec{
+			StreamType: connect.StreamTypeUnary,
+			Schema:     v1.File_relay_communication_v1_owner_proto.Services().ByName("OwnerService").Methods().ByName("ListEsimProfiles"),
+			Procedure:  OwnerServiceListEsimProfilesProcedure,
+		}
+	})
+	ownerServiceAddEsimProfileSpec = sync.OnceValue(func() connect.Spec {
+		return connect.Spec{
+			StreamType: connect.StreamTypeUnary,
+			Schema:     v1.File_relay_communication_v1_owner_proto.Services().ByName("OwnerService").Methods().ByName("AddEsimProfile"),
+			Procedure:  OwnerServiceAddEsimProfileProcedure,
+		}
+	})
+	ownerServiceRenameEsimProfileSpec = sync.OnceValue(func() connect.Spec {
+		return connect.Spec{
+			StreamType: connect.StreamTypeUnary,
+			Schema:     v1.File_relay_communication_v1_owner_proto.Services().ByName("OwnerService").Methods().ByName("RenameEsimProfile"),
+			Procedure:  OwnerServiceRenameEsimProfileProcedure,
+		}
+	})
+	ownerServiceSetEsimProfileEnabledSpec = sync.OnceValue(func() connect.Spec {
+		return connect.Spec{
+			StreamType: connect.StreamTypeUnary,
+			Schema:     v1.File_relay_communication_v1_owner_proto.Services().ByName("OwnerService").Methods().ByName("SetEsimProfileEnabled"),
+			Procedure:  OwnerServiceSetEsimProfileEnabledProcedure,
+		}
+	})
+	ownerServiceDeleteEsimProfileSpec = sync.OnceValue(func() connect.Spec {
+		return connect.Spec{
+			StreamType: connect.StreamTypeUnary,
+			Schema:     v1.File_relay_communication_v1_owner_proto.Services().ByName("OwnerService").Methods().ByName("DeleteEsimProfile"),
+			Procedure:  OwnerServiceDeleteEsimProfileProcedure,
 		}
 	})
 	ownerServiceRetireSimCardSpec = sync.OnceValue(func() connect.Spec {
@@ -259,6 +309,11 @@ var (
 type OwnerServiceClient interface {
 	ListDevices(context.Context, *v1.ListDevicesRequest) (*v1.ListDevicesResponse, error)
 	ListSimCards(context.Context, *v1.ListSimCardsRequest) (*v1.ListSimCardsResponse, error)
+	ListEsimProfiles(context.Context, *v1.ListEsimProfilesRequest) (*v1.ListEsimProfilesResponse, error)
+	AddEsimProfile(context.Context, *v1.AddEsimProfileRequest) (*v1.AddEsimProfileResponse, error)
+	RenameEsimProfile(context.Context, *v1.RenameEsimProfileRequest) (*v1.RenameEsimProfileResponse, error)
+	SetEsimProfileEnabled(context.Context, *v1.SetEsimProfileEnabledRequest) (*v1.SetEsimProfileEnabledResponse, error)
+	DeleteEsimProfile(context.Context, *v1.DeleteEsimProfileRequest) (*v1.DeleteEsimProfileResponse, error)
 	RetireSimCard(context.Context, *v1.RetireSimCardRequest) (*v1.RetireSimCardResponse, error)
 	UpdateDeviceNumericId(context.Context, *v1.UpdateDeviceNumericIdRequest) (*v1.UpdateDeviceNumericIdResponse, error)
 	UpdateDeviceProfile(context.Context, *v1.UpdateDeviceProfileRequest) (*v1.UpdateDeviceProfileResponse, error)
@@ -292,6 +347,11 @@ func NewOwnerServiceClient(client *connect.Client) OwnerServiceClient {
 type OwnerServiceHandler interface {
 	ListDevices(context.Context, *v1.ListDevicesRequest) (*v1.ListDevicesResponse, error)
 	ListSimCards(context.Context, *v1.ListSimCardsRequest) (*v1.ListSimCardsResponse, error)
+	ListEsimProfiles(context.Context, *v1.ListEsimProfilesRequest) (*v1.ListEsimProfilesResponse, error)
+	AddEsimProfile(context.Context, *v1.AddEsimProfileRequest) (*v1.AddEsimProfileResponse, error)
+	RenameEsimProfile(context.Context, *v1.RenameEsimProfileRequest) (*v1.RenameEsimProfileResponse, error)
+	SetEsimProfileEnabled(context.Context, *v1.SetEsimProfileEnabledRequest) (*v1.SetEsimProfileEnabledResponse, error)
+	DeleteEsimProfile(context.Context, *v1.DeleteEsimProfileRequest) (*v1.DeleteEsimProfileResponse, error)
 	RetireSimCard(context.Context, *v1.RetireSimCardRequest) (*v1.RetireSimCardResponse, error)
 	UpdateDeviceNumericId(context.Context, *v1.UpdateDeviceNumericIdRequest) (*v1.UpdateDeviceNumericIdResponse, error)
 	UpdateDeviceProfile(context.Context, *v1.UpdateDeviceProfileRequest) (*v1.UpdateDeviceProfileResponse, error)
@@ -322,6 +382,11 @@ func RegisterOwnerServiceHandler(server *connect.Server, svc OwnerServiceHandler
 	server.Register(
 		connect.Method{Spec: ownerServiceListDevicesSpec(), Handler: adapter.listDevices},
 		connect.Method{Spec: ownerServiceListSimCardsSpec(), Handler: adapter.listSimCards},
+		connect.Method{Spec: ownerServiceListEsimProfilesSpec(), Handler: adapter.listEsimProfiles},
+		connect.Method{Spec: ownerServiceAddEsimProfileSpec(), Handler: adapter.addEsimProfile},
+		connect.Method{Spec: ownerServiceRenameEsimProfileSpec(), Handler: adapter.renameEsimProfile},
+		connect.Method{Spec: ownerServiceSetEsimProfileEnabledSpec(), Handler: adapter.setEsimProfileEnabled},
+		connect.Method{Spec: ownerServiceDeleteEsimProfileSpec(), Handler: adapter.deleteEsimProfile},
 		connect.Method{Spec: ownerServiceRetireSimCardSpec(), Handler: adapter.retireSimCard},
 		connect.Method{Spec: ownerServiceUpdateDeviceNumericIdSpec(), Handler: adapter.updateDeviceNumericId},
 		connect.Method{Spec: ownerServiceUpdateDeviceProfileSpec(), Handler: adapter.updateDeviceProfile},
@@ -355,6 +420,26 @@ func (UnimplementedOwnerServiceHandler) ListDevices(context.Context, *v1.ListDev
 
 func (UnimplementedOwnerServiceHandler) ListSimCards(context.Context, *v1.ListSimCardsRequest) (*v1.ListSimCardsResponse, error) {
 	return nil, connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.OwnerService.ListSimCards is not implemented")
+}
+
+func (UnimplementedOwnerServiceHandler) ListEsimProfiles(context.Context, *v1.ListEsimProfilesRequest) (*v1.ListEsimProfilesResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.OwnerService.ListEsimProfiles is not implemented")
+}
+
+func (UnimplementedOwnerServiceHandler) AddEsimProfile(context.Context, *v1.AddEsimProfileRequest) (*v1.AddEsimProfileResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.OwnerService.AddEsimProfile is not implemented")
+}
+
+func (UnimplementedOwnerServiceHandler) RenameEsimProfile(context.Context, *v1.RenameEsimProfileRequest) (*v1.RenameEsimProfileResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.OwnerService.RenameEsimProfile is not implemented")
+}
+
+func (UnimplementedOwnerServiceHandler) SetEsimProfileEnabled(context.Context, *v1.SetEsimProfileEnabledRequest) (*v1.SetEsimProfileEnabledResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.OwnerService.SetEsimProfileEnabled is not implemented")
+}
+
+func (UnimplementedOwnerServiceHandler) DeleteEsimProfile(context.Context, *v1.DeleteEsimProfileRequest) (*v1.DeleteEsimProfileResponse, error) {
+	return nil, connect.NewError(connect.CodeUnimplemented, "relay.communication.v1.OwnerService.DeleteEsimProfile is not implemented")
 }
 
 func (UnimplementedOwnerServiceHandler) RetireSimCard(context.Context, *v1.RetireSimCardRequest) (*v1.RetireSimCardResponse, error) {
@@ -456,6 +541,46 @@ func (c *ownerServiceClient) ListDevices(ctx context.Context, req *v1.ListDevice
 func (c *ownerServiceClient) ListSimCards(ctx context.Context, req *v1.ListSimCardsRequest) (*v1.ListSimCardsResponse, error) {
 	var res v1.ListSimCardsResponse
 	if err := c.client.CallUnary(ctx, ownerServiceListSimCardsSpec(), req, &res); err != nil {
+		return nil, err
+	}
+	return &res, nil
+}
+
+func (c *ownerServiceClient) ListEsimProfiles(ctx context.Context, req *v1.ListEsimProfilesRequest) (*v1.ListEsimProfilesResponse, error) {
+	var res v1.ListEsimProfilesResponse
+	if err := c.client.CallUnary(ctx, ownerServiceListEsimProfilesSpec(), req, &res); err != nil {
+		return nil, err
+	}
+	return &res, nil
+}
+
+func (c *ownerServiceClient) AddEsimProfile(ctx context.Context, req *v1.AddEsimProfileRequest) (*v1.AddEsimProfileResponse, error) {
+	var res v1.AddEsimProfileResponse
+	if err := c.client.CallUnary(ctx, ownerServiceAddEsimProfileSpec(), req, &res); err != nil {
+		return nil, err
+	}
+	return &res, nil
+}
+
+func (c *ownerServiceClient) RenameEsimProfile(ctx context.Context, req *v1.RenameEsimProfileRequest) (*v1.RenameEsimProfileResponse, error) {
+	var res v1.RenameEsimProfileResponse
+	if err := c.client.CallUnary(ctx, ownerServiceRenameEsimProfileSpec(), req, &res); err != nil {
+		return nil, err
+	}
+	return &res, nil
+}
+
+func (c *ownerServiceClient) SetEsimProfileEnabled(ctx context.Context, req *v1.SetEsimProfileEnabledRequest) (*v1.SetEsimProfileEnabledResponse, error) {
+	var res v1.SetEsimProfileEnabledResponse
+	if err := c.client.CallUnary(ctx, ownerServiceSetEsimProfileEnabledSpec(), req, &res); err != nil {
+		return nil, err
+	}
+	return &res, nil
+}
+
+func (c *ownerServiceClient) DeleteEsimProfile(ctx context.Context, req *v1.DeleteEsimProfileRequest) (*v1.DeleteEsimProfileResponse, error) {
+	var res v1.DeleteEsimProfileResponse
+	if err := c.client.CallUnary(ctx, ownerServiceDeleteEsimProfileSpec(), req, &res); err != nil {
 		return nil, err
 	}
 	return &res, nil
@@ -649,6 +774,66 @@ func (h ownerServiceHandler) listSimCards(ctx context.Context, _ connect.Spec, s
 		return err
 	}
 	res, err := h.svc.ListSimCards(ctx, &req)
+	if err != nil {
+		return err
+	}
+	return stream.Send(res)
+}
+
+func (h ownerServiceHandler) listEsimProfiles(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {
+	var req v1.ListEsimProfilesRequest
+	if err := stream.Receive(&req); err != nil {
+		return err
+	}
+	res, err := h.svc.ListEsimProfiles(ctx, &req)
+	if err != nil {
+		return err
+	}
+	return stream.Send(res)
+}
+
+func (h ownerServiceHandler) addEsimProfile(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {
+	var req v1.AddEsimProfileRequest
+	if err := stream.Receive(&req); err != nil {
+		return err
+	}
+	res, err := h.svc.AddEsimProfile(ctx, &req)
+	if err != nil {
+		return err
+	}
+	return stream.Send(res)
+}
+
+func (h ownerServiceHandler) renameEsimProfile(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {
+	var req v1.RenameEsimProfileRequest
+	if err := stream.Receive(&req); err != nil {
+		return err
+	}
+	res, err := h.svc.RenameEsimProfile(ctx, &req)
+	if err != nil {
+		return err
+	}
+	return stream.Send(res)
+}
+
+func (h ownerServiceHandler) setEsimProfileEnabled(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {
+	var req v1.SetEsimProfileEnabledRequest
+	if err := stream.Receive(&req); err != nil {
+		return err
+	}
+	res, err := h.svc.SetEsimProfileEnabled(ctx, &req)
+	if err != nil {
+		return err
+	}
+	return stream.Send(res)
+}
+
+func (h ownerServiceHandler) deleteEsimProfile(ctx context.Context, _ connect.Spec, stream connect.ServerStream) error {
+	var req v1.DeleteEsimProfileRequest
+	if err := stream.Receive(&req); err != nil {
+		return err
+	}
+	res, err := h.svc.DeleteEsimProfile(ctx, &req)
 	if err != nil {
 		return err
 	}
